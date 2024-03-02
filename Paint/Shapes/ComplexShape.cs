@@ -1,11 +1,8 @@
-﻿
-using System.Drawing;
-using System.Numerics;
-
+﻿using MPaintClassLib.Drawers;
 namespace MPaintClassLib.Shares;
 public class ComplexShape
-(IEnumerable<Shape> shapes, Color borderColor, Color fillColor, System.Drawing.Rectangle box) : 
-Shape(borderColor, fillColor, box)
+(IEnumerable<Shape> shapes, ShapeInfo info) : 
+Shape(info)
 {
     public IEnumerable<Shape> Shapes { get; set; } = shapes;
 

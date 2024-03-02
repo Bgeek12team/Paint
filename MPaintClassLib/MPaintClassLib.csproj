@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Shares\Новая папка\" />
+    <Compile Remove="Drawers\**" />
+    <Compile Remove="Shares\**" />
+    <EmbeddedResource Remove="Drawers\**" />
+    <EmbeddedResource Remove="Shares\**" />
+    <None Remove="Drawers\**" />
+    <None Remove="Shares\**" />
   </ItemGroup>
 
 </Project>
