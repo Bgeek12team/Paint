@@ -14,6 +14,7 @@ public class LineDrawer : Drawer
 
     public override void Draw(Graphics graphics, Point p)
     {
+        
         throw new NotImplementedException();
     }
 }
