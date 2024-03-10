@@ -45,12 +45,17 @@ internal class Controller(Form1 form)
         throw new NotImplementedException();
     }
 
+
+
     /// <summary>
     /// Сохранить фигуру в файл
     /// </summary>
     /// <param name="shapes"></param>
-    public static void SaveShapeToFile(IEnumerable<Shape> shapes)
+    public static void SaveShapeToFile(System.Drawing.Rectangle rect)
     {
+        // определить какие фигуры выделены
+        // составить по ним complex shape
+        // сохранить собсна
         throw new NotImplementedException();
     }
 
@@ -64,5 +69,4 @@ internal class Controller(Form1 form)
     {
         throw new NotImplementedException();
     }
-
 }
