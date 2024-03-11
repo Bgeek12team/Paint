@@ -6,4 +6,14 @@ public partial class Form1 : Form
     {
         InitializeComponent();
     }
+
+    private void pictureBox1_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void toolStripComboBox1_Click(object sender, EventArgs e)
+    {
+
+    }
 }
