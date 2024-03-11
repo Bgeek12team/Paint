@@ -1,4 +1,5 @@
 ﻿using MPaintClassLib.Shares;
+using System.Text.Json;
 
 namespace Paint;
 internal class Controller(Form1 form)
@@ -57,6 +58,19 @@ internal class Controller(Form1 form)
         // составить по ним complex shape
         // сохранить собсна
         throw new NotImplementedException();
+    }
+
+    private static void SaveToFile(Shape shape, string file)
+    {
+        var json = JsonSerializer.Serialize(shape);
+        using var writer = new StreamWriter(file);
+        writer.Write(json);
+    }
+
+    private static Shape? ReadFromFile(string file)
+    {
+        var json = File.ReadAllText(file);
+        return JsonSerializer.Deserialize<ComplexShape>(json);
     }
 
     public static void ReadShapeFromFile(FileInfo fileInfo)
