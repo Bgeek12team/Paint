@@ -15,6 +15,17 @@ public class RectangleDrawer : Drawer
 
     public override void Draw(Graphics graphics, Point p)
     {
-        throw new NotImplementedException();
+        using (var outlinePen = new Pen(Figure.ShapeInfo.BorderColor))
+        {
+            graphics.DrawRectangle(outlinePen, Figure.ShapeInfo.Box);
+        }
+
+        if (Figure.ShapeInfo.FillColor != Color.Transparent)
+        {
+            using (var fillBrush = new SolidBrush(Figure.ShapeInfo.FillColor))
+            {
+                graphics.FillRectangle(fillBrush, Figure.ShapeInfo.Box);
+            }
+        }
     }
 }
