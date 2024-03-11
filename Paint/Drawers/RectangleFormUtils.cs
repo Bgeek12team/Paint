@@ -3,14 +3,14 @@ using Rectangle = MPaintClassLib.Shares.Rectangle;
 
 namespace MPaintClassLib.Drawers;
 
-public class RectangleDrawer : Drawer
+public class RectangleFormUtils : FormUtils
 {
-    private RectangleDrawer(Rectangle rectangle) : base(rectangle) { }
+    private RectangleFormUtils(Rectangle rectangle) : base(rectangle) { }
 
-    private static RectangleDrawer instance;
+    private static RectangleFormUtils instance;
 
-    public static RectangleDrawer GetInstance(Rectangle rectangle) =>
-        instance ??= new RectangleDrawer(rectangle);
+    public static RectangleFormUtils GetInstance(Rectangle rectangle) =>
+        instance ??= new RectangleFormUtils(rectangle);
 
 
     public override void Draw(Graphics graphics, Point p)
@@ -27,5 +27,10 @@ public class RectangleDrawer : Drawer
                 graphics.FillRectangle(fillBrush, Figure.ShapeInfo.Box);
             }
         }
+    }
+
+    public override bool InShape(Point p)
+    {
+        throw new NotImplementedException();
     }
 }

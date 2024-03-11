@@ -2,14 +2,14 @@
 
 namespace MPaintClassLib.Drawers;
 
-public class TriangleDrawer : Drawer
+public class TriangleFormUtils : FormUtils
 {
-    private TriangleDrawer(Triangle triangle) : base(triangle) { }
+    private TriangleFormUtils(Triangle triangle) : base(triangle) { }
 
-    private static TriangleDrawer instance;
+    private static TriangleFormUtils instance;
 
-    public static TriangleDrawer GetInstance(Triangle triangle) =>
-        instance ??= new TriangleDrawer(triangle);
+    public static TriangleFormUtils GetInstance(Triangle triangle) =>
+        instance ??= new TriangleFormUtils(triangle);
 
 
     public override void Draw(Graphics graphics, Point p)
@@ -34,5 +34,10 @@ public class TriangleDrawer : Drawer
                 graphics.FillPolygon(fillBrush, trianglePoints);
             }
         }
+    }
+
+    public override bool InShape(Point p)
+    {
+        throw new NotImplementedException();
     }
 }

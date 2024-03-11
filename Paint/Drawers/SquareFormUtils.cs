@@ -2,14 +2,14 @@
 
 namespace MPaintClassLib.Drawers;
 
-public class SquareDrawer : Drawer
+public class SquareFormUtils : FormUtils
 {
-    private SquareDrawer(Square square) : base(square) { }
+    private SquareFormUtils(Square square) : base(square) { }
 
-    private static SquareDrawer instance;
+    private static SquareFormUtils instance;
 
-    public static SquareDrawer GetInstance(Square square) =>
-        instance ??= new SquareDrawer(square);
+    public static SquareFormUtils GetInstance(Square square) =>
+        instance ??= new SquareFormUtils(square);
 
 
     public override void Draw(Graphics graphics, Point p)
@@ -29,5 +29,10 @@ public class SquareDrawer : Drawer
                 graphics.FillRectangle(fillBrush, squareRect);
             }
         }
+    }
+
+    public override bool InShape(Point p)
+    {
+        throw new NotImplementedException();
     }
 }

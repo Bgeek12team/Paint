@@ -3,14 +3,14 @@ using System.Reflection;
 
 namespace MPaintClassLib.Drawers;
 
-public class CircleDrawer : Drawer
+public class CircleFormUtils : FormUtils
 {
-    private CircleDrawer(Circle circle) : base(circle) { }
+    private CircleFormUtils(Circle circle) : base(circle) { }
 
-    private static CircleDrawer instance;
+    private static CircleFormUtils instance;
 
-    public static CircleDrawer GetInstance(Circle circle) =>
-        instance ??= new CircleDrawer(circle);
+    public static CircleFormUtils GetInstance(Circle circle) =>
+        instance ??= new CircleFormUtils(circle);
 
 
     public override void Draw(Graphics graphics, Point p)
@@ -31,5 +31,10 @@ public class CircleDrawer : Drawer
                 graphics.FillEllipse(fillBrush, circleBox);
             }
         }
+    }
+
+    public override bool InShape(Point p)
+    {
+        throw new NotImplementedException();
     }
 }

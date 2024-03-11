@@ -2,14 +2,14 @@
 
 namespace MPaintClassLib.Drawers;
 
-public class EllipseDrawer : Drawer
+public class EllipseFormUtils : FormUtils
 {
-    private EllipseDrawer(Ellipse ellipse) : base(ellipse) { }
+    private EllipseFormUtils(Ellipse ellipse) : base(ellipse) { }
 
-    private static EllipseDrawer instance;
+    private static EllipseFormUtils instance;
 
-    public static EllipseDrawer GetInstance(Ellipse ellipse) =>
-        instance ??= new EllipseDrawer(ellipse);
+    public static EllipseFormUtils GetInstance(Ellipse ellipse) =>
+        instance ??= new EllipseFormUtils(ellipse);
 
 
     public override void Draw(Graphics graphics, Point p)
@@ -22,5 +22,10 @@ public class EllipseDrawer : Drawer
             using var fillBrush = new SolidBrush(Figure.ShapeInfo.FillColor);
             graphics.FillEllipse(fillBrush, Figure.ShapeInfo.Box);
         }
+    }
+
+    public override bool InShape(Point p)
+    {
+        throw new NotImplementedException();
     }
 }
