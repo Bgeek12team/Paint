@@ -2,22 +2,22 @@
 namespace MPaintClassLib.Drawers;
 
 // ДОЛЖНА БЫТЬ СЕРИАЛИЗУЕМАЯ
-public class ComplexShapeDrawer : Drawer
+public class ComplexFormUtils : FormUtils
 {
     private IEnumerable<Shape> shapes;
 
-    private static ComplexShapeDrawer instance;
+    private static ComplexFormUtils instance;
 
-    private ComplexShapeDrawer
+    private ComplexFormUtils
     (ComplexShape complex, IEnumerable<Shape> shapes) : base(complex)
     {
         this.shapes = shapes;
     }
 
 
-    public static ComplexShapeDrawer GetInstance
+    public static ComplexFormUtils GetInstance
     (ComplexShape complex, IEnumerable<Shape> shapes) =>
-        instance ??= new ComplexShapeDrawer(complex, shapes);
+        instance ??= new ComplexFormUtils(complex, shapes);
 
 
     public override void Draw(Graphics graphics, Point p)
@@ -26,5 +26,10 @@ public class ComplexShapeDrawer : Drawer
         {
             shape.GetDrawer().Draw(graphics, p);
         }
+    }
+
+    public override bool InShape(Point p)
+    {
+        throw new NotImplementedException();
     }
 }

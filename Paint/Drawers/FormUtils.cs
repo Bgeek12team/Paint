@@ -46,8 +46,10 @@ namespace MPaintClassLib.Drawers;
  * ПО СУТИ НИЧЕМ КРОМЕ ПОЛЯ ХРАНЯЩЕГО ФИГУРЫ ОНА НЕ ОТЛИЧАЕТСЯ
  */
 
-public abstract class Drawer(Shape figure)
+public abstract class FormUtils(Shape figure)
 {
     protected Shape Figure { get; set; } = figure;
     public abstract void Draw(Graphics graphics, Point p);
+
+    public abstract bool InShape(Point p);
 }
