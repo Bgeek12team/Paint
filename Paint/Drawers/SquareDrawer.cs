@@ -14,6 +14,20 @@ public class SquareDrawer : Drawer
 
     public override void Draw(Graphics graphics, Point p)
     {
-        throw new NotImplementedException();
+        int sideLength = Math.Min(Figure.ShapeInfo.Box.Width, Figure.ShapeInfo.Box.Height);
+        System.Drawing.Rectangle squareRect = new System.Drawing.Rectangle(Figure.ShapeInfo.Box.Location, new Size(sideLength, sideLength));
+
+        using (var outlinePen = new Pen(Figure.ShapeInfo.BorderColor))
+        {
+            graphics.DrawRectangle(outlinePen, squareRect);
+        }
+
+        if (Figure.ShapeInfo.FillColor != Color.Transparent)
+        {
+            using (var fillBrush = new SolidBrush(Figure.ShapeInfo.FillColor))
+            {
+                graphics.FillRectangle(fillBrush, squareRect);
+            }
+        }
     }
 }

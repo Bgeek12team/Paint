@@ -14,6 +14,8 @@ public class LineDrawer : Drawer
 
     public override void Draw(Graphics graphics, Point p)
     {
-        throw new NotImplementedException();
+        using var linePen = new Pen(Figure.ShapeInfo.BorderColor);
+        graphics.DrawLine(linePen, Figure.ShapeInfo.Box.Location, new Point(Figure.ShapeInfo.Box.Right, Figure.ShapeInfo.Box.Bottom));
     }
 }
+

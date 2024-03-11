@@ -14,6 +14,25 @@ public class TriangleDrawer : Drawer
 
     public override void Draw(Graphics graphics, Point p)
     {
-        throw new NotImplementedException();
+        System.Drawing.Rectangle triangleBox = Figure.ShapeInfo.Box;
+
+        Point topVertex = new Point((triangleBox.Left + triangleBox.Right) / 2, triangleBox.Top);
+
+        Point[] trianglePoints = { new Point(triangleBox.Left, triangleBox.Bottom),
+                                           new Point(triangleBox.Right, triangleBox.Bottom),
+                                           topVertex };
+
+        using (var outlinePen = new Pen(Figure.ShapeInfo.BorderColor))
+        {
+            graphics.DrawPolygon(outlinePen, trianglePoints);
+        }
+
+        if (Figure.ShapeInfo.FillColor != Color.Transparent)
+        {
+            using (var fillBrush = new SolidBrush(Figure.ShapeInfo.FillColor))
+            {
+                graphics.FillPolygon(fillBrush, trianglePoints);
+            }
+        }
     }
 }

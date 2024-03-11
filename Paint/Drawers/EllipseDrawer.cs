@@ -14,6 +14,13 @@ public class EllipseDrawer : Drawer
 
     public override void Draw(Graphics graphics, Point p)
     {
-        throw new NotImplementedException();
+        using var outlinePen = new Pen(Figure.ShapeInfo.BorderColor);
+        graphics.DrawEllipse(outlinePen, Figure.ShapeInfo.Box);
+
+        if (Figure.ShapeInfo.FillColor != Color.Transparent)
+        {
+            using var fillBrush = new SolidBrush(Figure.ShapeInfo.FillColor);
+            graphics.FillEllipse(fillBrush, Figure.ShapeInfo.Box);
+        }
     }
 }
