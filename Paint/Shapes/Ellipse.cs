@@ -6,7 +6,7 @@ namespace MPaintClassLib.Shares;
 public class Ellipse(ShapeInfo info)
     : Shape(info)
 {
-    public override FormUtils GetDrawer() =>
+    public override FormUtils GetUtils() =>
         EllipseFormUtils.GetInstance(this);
 
     public override string ToString() =>

@@ -6,7 +6,7 @@ namespace MPaintClassLib.Shares;
 public class Line(ShapeInfo info)
     : Shape(info)
 {
-    public override FormUtils GetDrawer() =>
+    public override FormUtils GetUtils() =>
         LineFormUtils.GetInstance(this);
 
     public override string ToString() =>

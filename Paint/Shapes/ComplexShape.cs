@@ -6,6 +6,6 @@ Shape(info)
 {
     public IEnumerable<Shape> Shapes { get; set; } = shapes;
 
-    public override FormUtils GetDrawer() =>
+    public override FormUtils GetUtils() =>
         ComplexFormUtils.GetInstance(this, Shapes);
 }

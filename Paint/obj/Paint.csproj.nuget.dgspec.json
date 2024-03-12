@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\grish\\Desktop\\гит\\Pain\\Paint\\Paint.csproj": {}
+    "C:\\Users\\Алексей\\Source\\Repos\\Paint\\Paint\\Paint.csproj": {}
   },
   "projects": {
-    "C:\\Users\\grish\\Desktop\\гит\\Pain\\Paint\\Paint.csproj": {
+    "C:\\Users\\Алексей\\Source\\Repos\\Paint\\Paint\\Paint.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\grish\\Desktop\\гит\\Pain\\Paint\\Paint.csproj",
+        "projectUniqueName": "C:\\Users\\Алексей\\Source\\Repos\\Paint\\Paint\\Paint.csproj",
         "projectName": "Paint",
-        "projectPath": "C:\\Users\\grish\\Desktop\\гит\\Pain\\Paint\\Paint.csproj",
-        "packagesPath": "C:\\Users\\grish\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\grish\\Desktop\\гит\\Pain\\Paint\\obj\\",
+        "projectPath": "C:\\Users\\Алексей\\Source\\Repos\\Paint\\Paint\\Paint.csproj",
+        "packagesPath": "C:\\Users\\Алексей\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Алексей\\Source\\Repos\\Paint\\Paint\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\grish\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Алексей\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

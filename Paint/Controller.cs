@@ -15,49 +15,49 @@ internal class Controller(Form1 form)
     {
         Shape newShape = new Circle(new(border, fill, rect));
         canvasShapes.Add(p, newShape);
-        newShape.GetDrawer().Draw(graphics, p);
+        newShape.GetUtils().Draw(graphics, p);
     }
 
     public void DrawLine(Point p, Color border, Color fill, System.Drawing.Rectangle rect)
     {
         Shape newShape = new Line(new(border, fill, rect));
         canvasShapes.Add(p, newShape);
-        newShape.GetDrawer().Draw(graphics, p);
+        newShape.GetUtils().Draw(graphics, p);
     }
 
     public void DrawEllipse(Point p, Color border, Color fill, System.Drawing.Rectangle rect)
     {
         Shape newShape = new Ellipse(new(border, fill, rect));
         canvasShapes.Add(p, newShape);
-        newShape.GetDrawer().Draw(graphics, p);
+        newShape.GetUtils().Draw(graphics, p);
     }
 
     public void DrawSquare(Point p, Color border, Color fill, System.Drawing.Rectangle rect)
     {
         Shape newShape = new Square(new(border, fill, rect));
         canvasShapes.Add(p, newShape);
-        newShape.GetDrawer().Draw(graphics, p);
+        newShape.GetUtils().Draw(graphics, p);
     }
 
     public void DrawRectangle(Point p, Color border, Color fill, System.Drawing.Rectangle rect)
     {
         Shape newShape = new MPaintClassLib.Shares.Rectangle(new(border, fill, rect));
         canvasShapes.Add(p, newShape);
-        newShape.GetDrawer().Draw(graphics, p);
+        newShape.GetUtils().Draw(graphics, p);
     }
 
     public void DrawTriangle(Point p, Color border, Color fill, System.Drawing.Rectangle rect)
     {
         Shape newShape = new Triangle(new(border, fill, rect));
         canvasShapes.Add(p, newShape);
-        newShape.GetDrawer().Draw(graphics, p);
+        newShape.GetUtils().Draw(graphics, p);
     }
 
     public void DrawComplexShape(Point p, IEnumerable<Shape> shapes, ShapeInfo info)
     {
         Shape newShape = new ComplexShape(shapes, info);
         canvasShapes.Add(p, newShape);
-        newShape.GetDrawer().Draw(graphics, p);
+        newShape.GetUtils().Draw(graphics, p);
     }
 
     /*
@@ -71,21 +71,21 @@ internal class Controller(Form1 form)
         newShape.GetDrawer().Draw(graphics, p);
     } */
 
+    public void DrawCustomShape(int index, Point p)
+    {
+        canvasShapes.Add(p, CustomShapes[index]);
+        CustomShapes[index].GetUtils().Draw(graphics, p);
+    }
+
     public void Redraw()
     {
         graphics.Clear(Color.White);
         foreach (var shape in canvasShapes)
         {
-            shape.Value.GetDrawer().Draw(graphics, shape.Key);
+            shape.Value.GetUtils().Draw(graphics, shape.Key);
         }
     }
 
-    // аналогичные методы для эллипса, квадрата,
-    // прямоугольника, треугольника и стрелки и
-    // комплексной фигуры мне лень писать
-
-    // можете единый Redraw создать и каждый раз его вызывать 
-    // хуй знает мне похуй главное чтобы работало
 
     public void FillShape(Color fill, Point p)
     {
@@ -105,13 +105,17 @@ internal class Controller(Form1 form)
     {
         Circle newDot = new Circle(new(color, color, new(p, size)));
         canvasShapes.Add(p, newDot);
-        newDot.GetDrawer().Draw(graphics, p);
+        newDot.GetUtils().Draw(graphics, p);
     }
 
     private Shape FindShape(Point p)
     {
         foreach (var shape in canvasShapes)
         {
+            // кодга будет реализовано: 
+            //if (shape.Value.GetUtils().InShape(shape.Key))
+            //    return shape.Value;
+            
             if ((shape.Value.ShapeInfo.Box.Left < p.X) && (shape.Value.ShapeInfo.Box.Right > p.X)
                 && (shape.Value.ShapeInfo.Box.Top > p.Y) && (shape.Value.ShapeInfo.Box.Bottom > p.Y))
             {
@@ -121,37 +125,73 @@ internal class Controller(Form1 form)
         return null;
     }
 
+    static System.Drawing.Rectangle CombineRectangles
+    (System.Drawing.Rectangle rect1, System.Drawing.Rectangle rect2)
+    {
+        int minX = Math.Min(rect1.X, rect2.X);
+        int minY = Math.Min(rect1.Y, rect2.Y);
+        int maxX = Math.Max(rect1.X + rect1.Width, rect2.X + rect2.Width);
+        int maxY = Math.Max(rect1.Y + rect1.Height, rect2.Y + rect2.Height);
 
+        return new(minX, minY, maxX - minX, maxY - minY);
+    }
 
     /// <summary>
     /// Сохранить фигуру в файл
     /// </summary>
     /// <param name="shapes"></param>
-    public static void SaveShapeToFile(System.Drawing.Rectangle rect)
+    public void SaveShapeToFile(System.Drawing.Rectangle rect, FileInfo file)
     {
         // определить какие фигуры выделены
-        // составить по ним complex shape
+        // сука переделать по людски 
+        System.Drawing.Rectangle? rectangle = new();
+        foreach (var shape in canvasShapes.Values)
+        {
+            if (shape.ShapeInfo.Box.IntersectsWith(rect))
+            {
+                if (rectangle == null)
+                {
+                    rectangle = shape.ShapeInfo.Box;
+                    continue;
+                }
+                rectangle = CombineRectangles((System.Drawing.Rectangle)rectangle, shape.ShapeInfo.Box);
+            }
+        }
+        if (rectangle == null)
+        {
+            return;
+        }
+        // составить complex shape
+        var newShape = new ComplexShape(
+            canvasShapes.Values.Where(shape => shape.ShapeInfo.Box.IntersectsWith(rect)),
+            new ShapeInfo(Color.Black, Color.Black, (System.Drawing.Rectangle)rectangle)
+            );
         // сохранить собсна
+        SaveToFile(newShape, file.DirectoryName);
         throw new NotImplementedException();
     }
 
-    private static void SaveToFile(Shape shape, string file)
+    private static void SaveToFile(ComplexShape shape, string file)
     {
         var json = JsonSerializer.Serialize(shape);
         using var writer = new StreamWriter(file);
         writer.Write(json);
     }
 
-    private static Shape? ReadFromFile(string file)
+    private static ComplexShape? ReadFromFile(string file)
     {
         var json = File.ReadAllText(file);
         return JsonSerializer.Deserialize<ComplexShape>(json);
     }
 
-    public static void ReadShapeFromFile(FileInfo fileInfo)
+    public bool ReadShapeFromFile(FileInfo fileInfo)
     {
-        throw new NotImplementedException();
-        // CustomShapes.Add(newShape); и она должна появиться среди обычных фигур на форме
+        var shape = ReadFromFile(fileInfo.DirectoryName);
+        if (shape == null)
+            return false;
+
+        CustomShapes.Add(shape);
+        return true;
     }
 
     public void ClearCanvas()

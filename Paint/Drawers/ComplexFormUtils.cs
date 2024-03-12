@@ -24,7 +24,7 @@ public class ComplexFormUtils : FormUtils
     {
         foreach (var shape in shapes)
         {
-            shape.GetDrawer().Draw(graphics, p);
+            shape.GetUtils().Draw(graphics, p);
         }
     }
 

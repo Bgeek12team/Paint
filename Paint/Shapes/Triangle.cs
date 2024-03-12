@@ -6,7 +6,7 @@ namespace MPaintClassLib.Shares;
 public class Triangle(ShapeInfo info)
     : Shape(info)
 {
-    public override FormUtils GetDrawer() =>
+    public override FormUtils GetUtils() =>
         TriangleFormUtils.GetInstance(this);
 
     public override string ToString() =>

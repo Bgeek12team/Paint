@@ -6,7 +6,7 @@ namespace MPaintClassLib.Shares;
 public class Rectangle(ShapeInfo info)
     : Shape(info)
 {
-    public override FormUtils GetDrawer() =>
+    public override FormUtils GetUtils() =>
         RectangleFormUtils.GetInstance(this);
 
     public override string ToString() =>

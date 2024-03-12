@@ -6,7 +6,7 @@ namespace MPaintClassLib.Shares;
 public abstract class Shape(ShapeInfo info)
 {
     public ShapeInfo ShapeInfo { get; set; } = info;
-    public abstract FormUtils GetDrawer();
+    public abstract FormUtils GetUtils();
     public override int GetHashCode() =>
         HashCode.Combine(ShapeInfo);
 
