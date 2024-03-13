@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< Updated upstream
     "C:\\Users\\belsk\\Source\\Repos\\Paintkriseblan\\Paint\\Paint.csproj": {}
   },
   "projects": {
@@ -12,9 +13,27 @@
         "projectPath": "C:\\Users\\belsk\\Source\\Repos\\Paintkriseblan\\Paint\\Paint.csproj",
         "packagesPath": "C:\\Users\\belsk\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\belsk\\Source\\Repos\\Paintkriseblan\\Paint\\obj\\",
+=======
+    "C:\\Users\\grish\\Desktop\\гит\\newpain\\Paint\\Paint.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\grish\\Desktop\\гит\\newpain\\Paint\\Paint.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\grish\\Desktop\\гит\\newpain\\Paint\\Paint.csproj",
+        "projectName": "Paint",
+        "projectPath": "C:\\Users\\grish\\Desktop\\гит\\newpain\\Paint\\Paint.csproj",
+        "packagesPath": "C:\\Users\\grish\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\grish\\Desktop\\гит\\newpain\\Paint\\obj\\",
+>>>>>>> Stashed changes
         "projectStyle": "PackageReference",
         "configFilePaths": [
+<<<<<<< Updated upstream
           "C:\\Users\\belsk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\grish\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+>>>>>>> Stashed changes
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +41,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

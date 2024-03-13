@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< Updated upstream
   "dgSpecHash": "jqR9gbIW+P5NK21AQvKV4KMPA5e7c21JPo5d14sspz40dfOItAkw4XKu2egFLSsgf04T/nW59hn7OtN2i66YfA==",
   "success": true,
   "projectFilePath": "C:\\Users\\belsk\\Source\\Repos\\Paintkriseblan\\Paint\\Paint.csproj",
+=======
+  "dgSpecHash": "9uWvWUzSZACkI5ci/KMO3tOSe86+whHR8PJmSVJA1I2mO50YURhX5p5org5xoTFlnB98rKGLBTKtmpMFihD5rA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\grish\\Desktop\\гит\\newpain\\Paint\\Paint.csproj",
+>>>>>>> Stashed changes
   "expectedPackageFiles": [],
   "logs": []
 }
