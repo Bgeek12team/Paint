@@ -2,62 +2,69 @@
 using System.Text.Json;
 
 namespace Paint;
-internal class Controller(Form1 form)
+internal class Controller
 {
-    private readonly Form1 form = form;
+    public Controller(Form1 form)
+    {
+        this.form = form;
+        this.graphics = form.GetGraphics();
+    }
+
+    private readonly Form1 form;
 
     private readonly Dictionary<Point, Shape> canvasShapes = [];
 
     public List<ComplexShape> CustomShapes { get; set; } = [];
 
-    private readonly Graphics graphics = form.CreateGraphics();
+    private readonly Graphics graphics;
+    static int d = 50;
     public void DrawCircle(Point p, Color border, Color fill, System.Drawing.Rectangle rect)
     {
-        Shape newShape = new Circle(new(border, fill, rect));
-        canvasShapes.Add(p, newShape);
-        newShape.GetUtils().Draw(graphics, p);
+        var newShape = new Circle(new(border, fill, rect));
+        canvasShapes.TryAdd(p, newShape);
+        newShape.Draw(graphics, p);
     }
 
     public void DrawLine(Point p, Color border, Color fill, System.Drawing.Rectangle rect)
     {
         Shape newShape = new Line(new(border, fill, rect));
-        canvasShapes.Add(p, newShape);
-        newShape.GetUtils().Draw(graphics, p);
+        canvasShapes.TryAdd(p, newShape);
+        newShape.Draw(graphics, p);
     }
 
     public void DrawEllipse(Point p, Color border, Color fill, System.Drawing.Rectangle rect)
     {
-        Shape newShape = new Ellipse(new(border, fill, rect));
-        canvasShapes.Add(p, newShape);
-        newShape.GetUtils().Draw(graphics, p);
+        Ellipse newShape = new Ellipse(new(border, fill, rect));
+        canvasShapes.TryAdd(p, newShape);
+        newShape.Draw(graphics, p);
     }
 
     public void DrawSquare(Point p, Color border, Color fill, System.Drawing.Rectangle rect)
     {
         Shape newShape = new Square(new(border, fill, rect));
-        canvasShapes.Add(p, newShape);
-        newShape.GetUtils().Draw(graphics, p);
+        canvasShapes.TryAdd(p, newShape);
+        newShape.Draw(graphics, p);
     }
 
     public void DrawRectangle(Point p, Color border, Color fill, System.Drawing.Rectangle rect)
     {
         Shape newShape = new MPaintClassLib.Shares.Rectangle(new(border, fill, rect));
-        canvasShapes.Add(p, newShape);
-        newShape.GetUtils().Draw(graphics, p);
+        canvasShapes.TryAdd(p, newShape);
+        newShape.Draw(graphics, p);
     }
 
     public void DrawTriangle(Point p, Color border, Color fill, System.Drawing.Rectangle rect)
     {
         Shape newShape = new Triangle(new(border, fill, rect));
-        canvasShapes.Add(p, newShape);
-        newShape.GetUtils().Draw(graphics, p);
+        canvasShapes.TryAdd(p, newShape);
+        newShape.Draw(graphics, p);
     }
 
     public void DrawComplexShape(Point p, IEnumerable<Shape> shapes, ShapeInfo info)
     {
         Shape newShape = new ComplexShape(shapes, info);
-        canvasShapes.Add(p, newShape);
-        newShape.GetUtils().Draw(graphics, p);
+        canvasShapes.TryAdd(p, newShape);
+        newShape.Draw(graphics, p);
     }
 
     /*
@@ -73,8 +80,8 @@ internal class Controller(Form1 form)
 
     public void DrawCustomShape(int index, Point p)
     {
-        canvasShapes.Add(p, CustomShapes[index]);
-        CustomShapes[index].GetUtils().Draw(graphics, p);
+        canvasShapes.TryAdd(p, CustomShapes[index]);
+        CustomShapes[index].Draw(graphics, p);
     }
 
     public void Redraw()
@@ -82,7 +89,7 @@ internal class Controller(Form1 form)
         graphics.Clear(Color.White);
         foreach (var shape in canvasShapes)
         {
-            shape.Value.GetUtils().Draw(graphics, shape.Key);
+            shape.Value.Draw(graphics, shape.Key);
         }
     }
 
@@ -104,8 +111,8 @@ internal class Controller(Form1 form)
     public void DrawByBrush(Point p, Size size, Color color)
     {
         Circle newDot = new Circle(new(color, color, new(p, size)));
-        canvasShapes.Add(p, newDot);
-        newDot.GetUtils().Draw(graphics, p);
+        canvasShapes.TryAdd(p, newDot);
+        newDot.Draw(graphics, p);
     }
 
     private Shape FindShape(Point p)

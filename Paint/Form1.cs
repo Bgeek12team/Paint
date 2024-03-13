@@ -14,6 +14,9 @@ public partial class Form1 : Form
         InitializeComponent();
         controller = new Controller(this);
     }
+
+    public Graphics GetGraphics() =>
+        this.pictureBox1.CreateGraphics();
     private enum SelectedShapes
     {
         Null, Circle, Ellipse, Line, Rectangle, Square, Triangle
@@ -25,7 +28,7 @@ public partial class Form1 : Form
 
     private enum Tools
     {
-        Brush, Erase, Fill, Selection
+       Null, Brush, Erase, Fill, Selection
     }
     private void pictureBox1_Click(object sender, EventArgs e)
     {
@@ -48,11 +51,20 @@ public partial class Form1 : Form
         isMouse = true;
         if (selectedShapes == SelectedShapes.Circle)
         {
-            controller.DrawCircle(e.Location, Color.Black, Color.White, new Rectangle(e.Location, trackBar1.Size * 200));
+            var rect = new Rectangle(e.Location, new(trackBar1.Value * 5, trackBar1.Value * 5));
+            controller.DrawCircle(e.Location, Color.Black, Color.White, rect);
+            return;
         }
         if (selectedShapes == SelectedShapes.Ellipse)
         {
-            controller.DrawEllipse(new Point(Cursor.Position.X, Cursor.Position.Y), Color.Black, Color.White, new Rectangle(Cursor.Position.X, Cursor.Position.Y, 200, 200));
+            var rect = new Rectangle(e.Location, new(trackBar1.Value * 5, trackBar1.Value * 5));
+            controller.DrawEllipse(e.Location, Color.Black, Color.White, rect);
+            return;
+        }
+        if (tools == Tools.Brush)
+        {
+            controller.DrawByBrush(e.Location, new(trackBar1.Value, trackBar1.Value), Color.Black);
+            return;
         }
     }
 

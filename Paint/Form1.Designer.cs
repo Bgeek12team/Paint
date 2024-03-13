@@ -81,8 +81,7 @@
             pictureBox1.Dock = DockStyle.Right;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1218, 688);
-            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.Size = new Size(1218, 706);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
@@ -98,14 +97,12 @@
             groupBox1.Controls.Add(groupBox4);
             groupBox1.Controls.Add(groupBox3);
             groupBox1.Controls.Add(groupBox2);
-            groupBox1.Dock = DockStyle.Left;
             groupBox1.Font = new Font("Bookman Old Style", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            groupBox1.Location = new Point(0, 0);
+            groupBox1.Location = new Point(916, 0);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(244, 688);
+            groupBox1.Size = new Size(302, 706);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
-            groupBox1.Text = "MPAINTt";
             // 
             // groupBox6
             // 
@@ -164,7 +161,7 @@
             // 
             // trackBar1
             // 
-            trackBar1.Location = new Point(-3, 32);
+            trackBar1.Location = new Point(0, 31);
             trackBar1.Maximum = 20;
             trackBar1.Minimum = 1;
             trackBar1.Name = "trackBar1";
@@ -442,7 +439,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(1218, 688);
+            ClientSize = new Size(1218, 706);
             Controls.Add(groupBox1);
             Controls.Add(pictureBox1);
             Name = "Form1";
@@ -457,7 +454,6 @@
             groupBox3.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
