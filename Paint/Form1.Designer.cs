@@ -51,8 +51,6 @@
             brush_button = new Button();
             groupBox2 = new GroupBox();
             button1 = new Button();
-            Peru_button = new Button();
-            choco_button = new Button();
             Lime_button = new Button();
             Pink_button = new Button();
             purple_button = new Button();
@@ -64,6 +62,8 @@
             Black_button = new Button();
             Red_button = new Button();
             colorDialog1 = new ColorDialog();
+            openFileDialog1 = new OpenFileDialog();
+            saveFileDialog1 = new SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             groupBox6.SuspendLayout();
@@ -76,12 +76,13 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackColor = Color.RosyBrown;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
             pictureBox1.Dock = DockStyle.Right;
-            pictureBox1.Location = new Point(250, 0);
+            pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1003, 712);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.Size = new Size(1218, 688);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
@@ -97,10 +98,11 @@
             groupBox1.Controls.Add(groupBox4);
             groupBox1.Controls.Add(groupBox3);
             groupBox1.Controls.Add(groupBox2);
+            groupBox1.Dock = DockStyle.Left;
             groupBox1.Font = new Font("Bookman Old Style", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
             groupBox1.Location = new Point(0, 0);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(244, 712);
+            groupBox1.Size = new Size(244, 688);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "MPAINTt";
@@ -127,6 +129,7 @@
             clear_button.TabIndex = 9;
             clear_button.Text = "Очистить";
             clear_button.UseVisualStyleBackColor = true;
+            clear_button.Click += clear_button_Click;
             // 
             // fileopen_button
             // 
@@ -136,6 +139,7 @@
             fileopen_button.TabIndex = 7;
             fileopen_button.Text = "Загрузить";
             fileopen_button.UseVisualStyleBackColor = true;
+            fileopen_button.Click += fileopen_button_Click;
             // 
             // filesave_button
             // 
@@ -193,6 +197,7 @@
             square_button.Size = new Size(42, 33);
             square_button.TabIndex = 6;
             square_button.UseVisualStyleBackColor = true;
+            square_button.Click += square_button_Click;
             // 
             // reactangle_button
             // 
@@ -202,6 +207,7 @@
             reactangle_button.Size = new Size(42, 33);
             reactangle_button.TabIndex = 5;
             reactangle_button.UseVisualStyleBackColor = true;
+            reactangle_button.Click += reactangle_button_Click;
             // 
             // triangle_button
             // 
@@ -211,6 +217,7 @@
             triangle_button.Size = new Size(42, 33);
             triangle_button.TabIndex = 4;
             triangle_button.UseVisualStyleBackColor = true;
+            triangle_button.Click += triangle_button_Click;
             // 
             // line_button
             // 
@@ -220,6 +227,7 @@
             line_button.Size = new Size(42, 33);
             line_button.TabIndex = 3;
             line_button.UseVisualStyleBackColor = true;
+            line_button.Click += line_button_Click;
             // 
             // ellipse_button
             // 
@@ -229,6 +237,7 @@
             ellipse_button.Size = new Size(42, 33);
             ellipse_button.TabIndex = 2;
             ellipse_button.UseVisualStyleBackColor = true;
+            ellipse_button.Click += ellipse_button_Click;
             // 
             // circle_button
             // 
@@ -238,6 +247,7 @@
             circle_button.Size = new Size(42, 33);
             circle_button.TabIndex = 1;
             circle_button.UseVisualStyleBackColor = true;
+            circle_button.Click += circle_button_Click;
             // 
             // groupBox3
             // 
@@ -262,6 +272,7 @@
             fill_button.Size = new Size(41, 41);
             fill_button.TabIndex = 4;
             fill_button.UseVisualStyleBackColor = true;
+            fill_button.Click += fill_button_Click;
             // 
             // selection_button
             // 
@@ -271,6 +282,7 @@
             selection_button.Size = new Size(41, 41);
             selection_button.TabIndex = 3;
             selection_button.UseVisualStyleBackColor = true;
+            selection_button.Click += selection_button_Click;
             // 
             // eraser_button
             // 
@@ -280,6 +292,7 @@
             eraser_button.Size = new Size(41, 41);
             eraser_button.TabIndex = 2;
             eraser_button.UseVisualStyleBackColor = true;
+            eraser_button.Click += eraser_button_Click;
             // 
             // brush_button
             // 
@@ -289,12 +302,11 @@
             brush_button.Size = new Size(41, 41);
             brush_button.TabIndex = 1;
             brush_button.UseVisualStyleBackColor = true;
+            brush_button.Click += brush_button_Click;
             // 
             // groupBox2
             // 
             groupBox2.Controls.Add(button1);
-            groupBox2.Controls.Add(Peru_button);
-            groupBox2.Controls.Add(choco_button);
             groupBox2.Controls.Add(Lime_button);
             groupBox2.Controls.Add(Pink_button);
             groupBox2.Controls.Add(purple_button);
@@ -317,30 +329,13 @@
             // button1
             // 
             button1.BackColor = SystemColors.ActiveBorder;
+            button1.Image = (Image)resources.GetObject("button1.Image");
             button1.Location = new Point(82, 105);
             button1.Name = "button1";
             button1.Size = new Size(32, 30);
             button1.TabIndex = 12;
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
-            // 
-            // Peru_button
-            // 
-            Peru_button.BackColor = Color.Peru;
-            Peru_button.Location = new Point(44, 105);
-            Peru_button.Name = "Peru_button";
-            Peru_button.Size = new Size(32, 30);
-            Peru_button.TabIndex = 11;
-            Peru_button.UseVisualStyleBackColor = false;
-            // 
-            // choco_button
-            // 
-            choco_button.BackColor = Color.Chocolate;
-            choco_button.Location = new Point(6, 105);
-            choco_button.Name = "choco_button";
-            choco_button.Size = new Size(32, 30);
-            choco_button.TabIndex = 10;
-            choco_button.UseVisualStyleBackColor = false;
             // 
             // Lime_button
             // 
@@ -350,6 +345,7 @@
             Lime_button.Size = new Size(32, 30);
             Lime_button.TabIndex = 9;
             Lime_button.UseVisualStyleBackColor = false;
+            Lime_button.Click += Lime_button_Click;
             // 
             // Pink_button
             // 
@@ -359,6 +355,7 @@
             Pink_button.Size = new Size(32, 30);
             Pink_button.TabIndex = 8;
             Pink_button.UseVisualStyleBackColor = false;
+            Pink_button.Click += Pink_button_Click;
             // 
             // purple_button
             // 
@@ -368,6 +365,7 @@
             purple_button.Size = new Size(32, 30);
             purple_button.TabIndex = 7;
             purple_button.UseVisualStyleBackColor = false;
+            purple_button.Click += purple_button_Click;
             // 
             // blue_button
             // 
@@ -377,6 +375,7 @@
             blue_button.Size = new Size(32, 30);
             blue_button.TabIndex = 6;
             blue_button.UseVisualStyleBackColor = false;
+            blue_button.Click += blue_button_Click;
             // 
             // white_button
             // 
@@ -386,6 +385,7 @@
             white_button.Size = new Size(32, 30);
             white_button.TabIndex = 5;
             white_button.UseVisualStyleBackColor = false;
+            white_button.Click += white_button_Click;
             // 
             // Green_button
             // 
@@ -395,6 +395,7 @@
             Green_button.Size = new Size(32, 30);
             Green_button.TabIndex = 4;
             Green_button.UseVisualStyleBackColor = false;
+            Green_button.Click += Green_button_Click;
             // 
             // yellow_button
             // 
@@ -404,6 +405,7 @@
             yellow_button.Size = new Size(32, 30);
             yellow_button.TabIndex = 3;
             yellow_button.UseVisualStyleBackColor = false;
+            yellow_button.Click += yellow_button_Click;
             // 
             // Orange_button
             // 
@@ -413,31 +415,34 @@
             Orange_button.Size = new Size(32, 30);
             Orange_button.TabIndex = 2;
             Orange_button.UseVisualStyleBackColor = false;
+            Orange_button.Click += Orange_button_Click;
             // 
             // Black_button
             // 
             Black_button.BackColor = Color.Black;
-            Black_button.Location = new Point(44, 33);
+            Black_button.Location = new Point(6, 33);
             Black_button.Name = "Black_button";
             Black_button.Size = new Size(32, 30);
             Black_button.TabIndex = 1;
             Black_button.UseVisualStyleBackColor = false;
+            Black_button.Click += Black_button_Click;
             // 
             // Red_button
             // 
             Red_button.BackColor = Color.Red;
-            Red_button.Location = new Point(6, 33);
+            Red_button.Location = new Point(44, 33);
             Red_button.Name = "Red_button";
             Red_button.Size = new Size(32, 30);
             Red_button.TabIndex = 0;
             Red_button.UseVisualStyleBackColor = false;
+            Red_button.Click += Red_button_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(1253, 712);
+            ClientSize = new Size(1218, 688);
             Controls.Add(groupBox1);
             Controls.Add(pictureBox1);
             Name = "Form1";
@@ -452,6 +457,7 @@
             groupBox3.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -471,8 +477,6 @@
         private Button Pink_button;
         private GroupBox groupBox3;
         private Button brush_button;
-        private Button Peru_button;
-        private Button choco_button;
         private GroupBox groupBox4;
         private Button triangle_button;
         private Button line_button;
@@ -491,5 +495,7 @@
         private Button clear_button;
         private Button button1;
         private ColorDialog colorDialog1;
+        private OpenFileDialog openFileDialog1;
+        private SaveFileDialog saveFileDialog1;
     }
 }
