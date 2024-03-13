@@ -2,13 +2,8 @@
 namespace MPaintClassLib.Shares;
 
 
-internal class Dot : Shape
+internal class Dot(ShapeInfo info) : Shape(info)
 {
-    public Dot(ShapeInfo info) : base(info)
-    {
-
-    }
-
     public override void Draw(Graphics graphics, Point p)
     {
         Point center = ShapeInfo.Box.Location;

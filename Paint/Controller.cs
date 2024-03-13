@@ -102,7 +102,7 @@ internal class Controller
 
     public void EraseShape(Point p)
     {
-        var foundShape = FindShape(p, out var point);
+        FindShape(p, out var point);
         if (point != null)
         {
             canvasShapes.Remove((Point)point);
@@ -126,7 +126,7 @@ internal class Controller
             //    return shape.Value;
             
             if ((shape.Value.ShapeInfo.Box.Left < p.X) && (shape.Value.ShapeInfo.Box.Right > p.X)
-                && (shape.Value.ShapeInfo.Box.Top > p.Y) && (shape.Value.ShapeInfo.Box.Bottom > p.Y))
+                && (shape.Value.ShapeInfo.Box.Top < p.Y) && (shape.Value.ShapeInfo.Box.Bottom > p.Y))
             {
                 adjPoint = shape.Key;
                 return shape.Value;
