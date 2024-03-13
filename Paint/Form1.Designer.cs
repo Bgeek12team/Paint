@@ -50,6 +50,7 @@
             eraser_button = new Button();
             brush_button = new Button();
             groupBox2 = new GroupBox();
+            button1 = new Button();
             Peru_button = new Button();
             choco_button = new Button();
             Lime_button = new Button();
@@ -62,6 +63,7 @@
             Orange_button = new Button();
             Black_button = new Button();
             Red_button = new Button();
+            colorDialog1 = new ColorDialog();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             groupBox6.SuspendLayout();
@@ -83,6 +85,9 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
+            pictureBox1.MouseDown += pictureBox1_MouseDown;
+            pictureBox1.MouseMove += pictureBox1_MouseMove;
+            pictureBox1.MouseUp += pictureBox1_MouseUp;
             // 
             // groupBox1
             // 
@@ -287,6 +292,7 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(button1);
             groupBox2.Controls.Add(Peru_button);
             groupBox2.Controls.Add(choco_button);
             groupBox2.Controls.Add(Lime_button);
@@ -307,6 +313,16 @@
             groupBox2.TabIndex = 0;
             groupBox2.TabStop = false;
             groupBox2.Text = "Цвета";
+            // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.ActiveBorder;
+            button1.Location = new Point(82, 105);
+            button1.Name = "button1";
+            button1.Size = new Size(32, 30);
+            button1.TabIndex = 12;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // Peru_button
             // 
@@ -473,5 +489,7 @@
         private Button fileopen_button;
         private Button filesave_button;
         private Button clear_button;
+        private Button button1;
+        private ColorDialog colorDialog1;
     }
 }
