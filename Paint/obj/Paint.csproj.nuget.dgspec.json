@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\belsk\\Source\\Repos\\PaintNEWNEW\\Paint\\Paint.csproj": {}
+    "C:\\Users\\belsk\\source\\repos\\PaintNEWNEW\\Paint\\Paint.csproj": {}
   },
   "projects": {
-    "C:\\Users\\belsk\\Source\\Repos\\PaintNEWNEW\\Paint\\Paint.csproj": {
+    "C:\\Users\\belsk\\source\\repos\\PaintNEWNEW\\Paint\\Paint.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\belsk\\Source\\Repos\\PaintNEWNEW\\Paint\\Paint.csproj",
+        "projectUniqueName": "C:\\Users\\belsk\\source\\repos\\PaintNEWNEW\\Paint\\Paint.csproj",
         "projectName": "Paint",
-        "projectPath": "C:\\Users\\belsk\\Source\\Repos\\PaintNEWNEW\\Paint\\Paint.csproj",
+        "projectPath": "C:\\Users\\belsk\\source\\repos\\PaintNEWNEW\\Paint\\Paint.csproj",
         "packagesPath": "C:\\Users\\belsk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\belsk\\Source\\Repos\\PaintNEWNEW\\Paint\\obj\\",
+        "outputPath": "C:\\Users\\belsk\\source\\repos\\PaintNEWNEW\\Paint\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\belsk\\AppData\\Roaming\\NuGet\\NuGet.Config",

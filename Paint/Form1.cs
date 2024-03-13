@@ -1,13 +1,18 @@
 using System.Drawing;
+using System.Net;
+using System.Windows.Forms;
 
 namespace Paint;
 
 public partial class Form1 : Form
 {
+    private Point startPoint;
+    private Point endPoint;
     private Controller controller;
     private SelectedShapes selectedShapes;
     private Tools tools;
     private bool isMouse = false;
+    private bool isDrawing = false;
     private enum SelectedShapes
     {
         Null, Circle, Ellipse, Line, Rectangle, Square, Triangle
@@ -18,16 +23,22 @@ public partial class Form1 : Form
         controller = new Controller(this);
         tools = Tools.Brush;
         selectedShapes = SelectedShapes.Null;
+        this.Controls.Add(pictureBox1);
+
+        this.DoubleBuffered = true;
+        pictureBox1.MouseDown += pictureBox1_MouseDown;
+        pictureBox1.MouseMove += pictureBox1_MouseMove;
+        pictureBox1.MouseUp += pictureBox1_MouseUp;
 
     }
 
+    Graphics g;
     public Graphics GetGraphics() =>
-        this.pictureBox1.CreateGraphics();
-    
+        g ??= this.pictureBox1.CreateGraphics();
 
     private enum Tools
     {
-       Null, Brush, Erase, Fill, Selection
+        Null, Brush, Erase, Fill, Selection
     }
     private void pictureBox1_Click(object sender, EventArgs e)
     {
@@ -48,45 +59,47 @@ public partial class Form1 : Form
     private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
     {
         isMouse = true;
-        if (selectedShapes == SelectedShapes.Circle)
-        {
-            var rect = new Rectangle(e.Location, new(trackBar1.Value * 5, trackBar1.Value * 5));
-            controller.DrawCircle(e.Location, customColor, Color.White, rect);
-            return;
-        }
-        if (selectedShapes == SelectedShapes.Ellipse)
-        {
-            var rect = new Rectangle(e.Location, new(trackBar1.Value * 10, trackBar1.Value * 5));
-            controller.DrawEllipse(e.Location, customColor, Color.White, rect);
-            return;
-        }
-        if (selectedShapes == SelectedShapes.Line)
-        {
-            var rect = new Rectangle(e.Location, new(trackBar1.Value * 5, trackBar1.Value * 5));
-            controller.DrawLine(e.Location, customColor, Color.White, rect);
-            return;
-        }
-        if (selectedShapes == SelectedShapes.Rectangle)
-        {
-            var rect = new Rectangle(e.Location, new(trackBar1.Value * 10, trackBar1.Value * 5));
-            controller.DrawRectangle(e.Location, customColor, Color.White, rect);
-            return;
-        }
-        if (selectedShapes == SelectedShapes.Square)
-        {
-            var rect = new Rectangle(e.Location, new(trackBar1.Value * 5, trackBar1.Value * 5));
-            controller.DrawSquare(e.Location, customColor, Color.White, rect);
-            return;
-        }
-        if (selectedShapes == SelectedShapes.Triangle)
-        {
-            var rect = new Rectangle(e.Location, new(trackBar1.Value * 5, trackBar1.Value * 5));
-            controller.DrawTriangle(e.Location, customColor, Color.White, rect);
-            return;
-        }
+        isDrawing = true;
+        startPoint = e.Location;
+        //if (selectedShapes == SelectedShapes.Circle)
+        //{
+        //    var rect = new Rectangle(e.Location, new(trackBar1.Value * 5, trackBar1.Value * 5));
+        //    controller.DrawCircle(e.Location, customColor, Color.White, rect);
+        //    return;
+        //}
+        //if (selectedShapes == SelectedShapes.Ellipse)
+        //{
+        //    var rect = new Rectangle(e.Location, new(trackBar1.Value * 10, trackBar1.Value * 5));
+        //    controller.DrawEllipse(e.Location, customColor, Color.White, rect);
+        //    return;
+        //}
+        //if (selectedShapes == SelectedShapes.Line)
+        //{
+        //    var rect = new Rectangle(e.Location, new(trackBar1.Value * 5, trackBar1.Value * 5));
+        //    controller.DrawLine(e.Location, customColor, Color.White, rect);
+        //    return;
+        //}
+        //if (selectedShapes == SelectedShapes.Rectangle)
+        //{
+        //    var rect = new Rectangle(e.Location, new(trackBar1.Value * 10, trackBar1.Value * 5));
+        //    controller.DrawRectangle(e.Location, customColor, Color.White, rect);
+        //    return;
+        //}
+        //if (selectedShapes == SelectedShapes.Square)
+        //{
+        //    var rect = new Rectangle(e.Location, new(trackBar1.Value * 5, trackBar1.Value * 5));
+        //    controller.DrawSquare(e.Location, customColor, Color.White, rect);
+        //    return;
+        //}
+        //if (selectedShapes == SelectedShapes.Triangle)
+        //{
+        //    var rect = new Rectangle(e.Location, new(trackBar1.Value * 5, trackBar1.Value * 5));
+        //    controller.DrawTriangle(e.Location, customColor, Color.White, rect);
+        //    return;
+        //}
         if (tools == Tools.Brush)
         {
-            controller.DrawByBrush(e.Location, new(trackBar1.Value, trackBar1.Value), Color.Black);
+            controller.DrawByBrush(e.Location, new(trackBar1.Value, trackBar1.Value), customColor);
             return;
         }
         if (tools == Tools.Erase)
@@ -99,21 +112,46 @@ public partial class Form1 : Form
             controller.FillShape(customColor, e.Location);
             return;
         }
-        if (tools == Tools.Selection)
-        {
-            return;
-        }
     }
 
+    private Rectangle GetRectangle(Point startPoint, Point endPoint)
+    {
+        return new Rectangle(startPoint.X, startPoint.Y, Math.Abs(endPoint.X - startPoint.X), Math.Abs(endPoint.Y - startPoint.Y));
+    }
     private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
     {
         if (!isMouse) { return; }
-        controller.DrawByBrush(e.Location, new(trackBar1.Value, trackBar1.Value), customColor);
+        if (tools == Tools.Brush)
+        {
+            controller.DrawByBrush(e.Location, new(trackBar1.Value, trackBar1.Value), customColor);
+            return;
+        }
+        if (tools == Tools.Erase)
+        {
+            controller.EraseShape(e.Location);
+            return;
+        }
+        if (selectedShapes == SelectedShapes.Circle)
+        {
+            isDrawing = true;
+            endPoint = e.Location;
+            GetGraphics().DrawEllipse(new(customColor, 5), startPoint.X, startPoint.Y, endPoint.X - startPoint.X, endPoint.Y - startPoint.Y);
+            pictureBox1.Invalidate();
+        }
     }
+
 
     private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
     {
         isMouse = false;
+        endPoint = e.Location;
+        if(isDrawing)
+        {
+            controller.DrawEllipse(startPoint, Color.Transparent, customColor, GetRectangle(startPoint, endPoint));
+            controller.Redraw();
+            isDrawing = false;
+        }
+        
     }
 
     private void circle_button_Click(object sender, EventArgs e)
@@ -238,5 +276,63 @@ public partial class Form1 : Form
     private void clear_button_Click(object sender, EventArgs e)
     {
         controller.ClearCanvas();
+    }
+
+    private void pictureBox1_Paint(object sender, PaintEventArgs e)
+    {
+        if (selectedShapes == SelectedShapes.Circle)
+        {
+            e.Graphics.DrawRectangle(Pens.Black, Math.Min(startPoint.X, endPoint.X), Math.Min(startPoint.Y, endPoint.Y), Math.Abs(startPoint.X - endPoint.X), Math.Abs(startPoint.Y - endPoint.Y));
+        }
+    }
+
+    private void Form1_MouseDown(object sender, MouseEventArgs e)
+    {
+
+    }
+
+    private void Form1_MouseMove(object sender, MouseEventArgs e)
+    {
+
+    }
+
+    private void Form1_MouseUp(object sender, MouseEventArgs e)
+    {
+
+    }
+
+    private void pictureBox2_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
+    {
+
+    }
+
+    private void pictureBox2_MouseMove(object sender, MouseEventArgs e)
+    {
+        
+    }
+
+    private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
+    {
+        
+    }
+
+    private void panel1_MouseDown(object sender, MouseEventArgs e)
+    {
+        
+    }
+
+    private void panel1_MouseMove(object sender, MouseEventArgs e)
+    {
+        
+    }
+
+    private void panel1_MouseUp(object sender, MouseEventArgs e)
+    {
+        
     }
 }

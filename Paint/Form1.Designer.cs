@@ -78,13 +78,14 @@
             // 
             pictureBox1.BackColor = Color.WhiteSmoke;
             pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Dock = DockStyle.Right;
+            pictureBox1.Dock = DockStyle.Fill;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(1218, 706);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
+            pictureBox1.Paint += pictureBox1_Paint;
             pictureBox1.MouseDown += pictureBox1_MouseDown;
             pictureBox1.MouseMove += pictureBox1_MouseMove;
             pictureBox1.MouseUp += pictureBox1_MouseUp;
@@ -444,6 +445,9 @@
             Controls.Add(pictureBox1);
             Name = "Form1";
             Text = "PAINt";
+            MouseDown += Form1_MouseDown;
+            MouseMove += Form1_MouseMove;
+            MouseUp += Form1_MouseUp;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox6.ResumeLayout(false);
