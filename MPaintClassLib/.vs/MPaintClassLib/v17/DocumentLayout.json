@@ -1,45 +1,15 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\GitHub\\Paint\\MPaintClassLib\\",
+  "WorkspaceRootPath": "C:\\Users\\belsk\\source\\repos\\Paintkriseblan\\MPaintClassLib\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|d:\\github\\paint\\paint\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|c:\\users\\belsk\\source\\repos\\paintkriseblan\\paint\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|D:\\GitHub\\Paint\\paint\\shapes\\line.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|c:\\users\\belsk\\source\\repos\\paintkriseblan\\paint\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|D:\\GitHub\\Paint\\paint\\shapes\\rectangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|D:\\GitHub\\Paint\\paint\\drawers\\squaredrawer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|D:\\GitHub\\Paint\\paint\\drawers\\ellipsedrawer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|D:\\GitHub\\Paint\\paint\\shapes\\square.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|D:\\GitHub\\Paint\\paint\\drawers\\complexshapedrawer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|D:\\GitHub\\Paint\\paint\\drawers\\circledrawer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|D:\\GitHub\\Paint\\paint\\shapes\\triangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|D:\\GitHub\\Paint\\paint\\shapes\\shapeinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|D:\\GitHub\\Paint\\paint\\shapes\\circle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|D:\\GitHub\\Paint\\paint\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|D:\\GitHub\\Paint\\paint\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|c:\\users\\belsk\\source\\repos\\paintkriseblan\\paint\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -49,15 +19,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 204,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Bookmark",
@@ -77,7 +51,7 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Bookmark",
@@ -85,159 +59,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Rectangle.cs",
-              "DocumentMoniker": "D:\\GitHub\\Paint\\Paint\\Shapes\\Rectangle.cs",
-              "RelativeDocumentMoniker": "..\\Paint\\Shapes\\Rectangle.cs",
-              "ToolTip": "D:\\GitHub\\Paint\\Paint\\Shapes\\Rectangle.cs",
-              "RelativeToolTip": "..\\Paint\\Shapes\\Rectangle.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T19:57:11.724Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Line.cs",
-              "DocumentMoniker": "D:\\GitHub\\Paint\\Paint\\Shapes\\Line.cs",
-              "RelativeDocumentMoniker": "..\\Paint\\Shapes\\Line.cs",
-              "ToolTip": "D:\\GitHub\\Paint\\Paint\\Shapes\\Line.cs",
-              "RelativeToolTip": "..\\Paint\\Shapes\\Line.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T19:57:11.742Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Controller.cs",
-              "DocumentMoniker": "D:\\GitHub\\Paint\\Paint\\Controller.cs",
-              "RelativeDocumentMoniker": "..\\Paint\\Controller.cs",
-              "ToolTip": "D:\\GitHub\\Paint\\Paint\\Controller.cs",
-              "RelativeToolTip": "..\\Paint\\Controller.cs",
-              "ViewState": "AQIAAGsAAAAAAAAAAAAowH8AAAAlAAAA",
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\belsk\\source\\repos\\Paintkriseblan\\Paint\\Form1.cs",
+              "RelativeDocumentMoniker": "..\\Paint\\Form1.cs",
+              "ToolTip": "C:\\Users\\belsk\\source\\repos\\Paintkriseblan\\Paint\\Form1.cs",
+              "RelativeToolTip": "..\\Paint\\Form1.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAA5wAwAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T19:57:12.203Z",
+              "WhenOpened": "2024-03-13T14:43:12.341Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SquareDrawer.cs",
-              "DocumentMoniker": "D:\\GitHub\\Paint\\Paint\\Drawers\\SquareDrawer.cs",
-              "RelativeDocumentMoniker": "..\\Paint\\Drawers\\SquareDrawer.cs",
-              "ToolTip": "D:\\GitHub\\Paint\\Paint\\Drawers\\SquareDrawer.cs",
-              "RelativeToolTip": "..\\Paint\\Drawers\\SquareDrawer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T19:57:12.486Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EllipseDrawer.cs",
-              "DocumentMoniker": "D:\\GitHub\\Paint\\Paint\\Drawers\\EllipseDrawer.cs",
-              "RelativeDocumentMoniker": "..\\Paint\\Drawers\\EllipseDrawer.cs",
-              "ToolTip": "D:\\GitHub\\Paint\\Paint\\Drawers\\EllipseDrawer.cs",
-              "RelativeToolTip": "..\\Paint\\Drawers\\EllipseDrawer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T19:57:12.487Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Square.cs",
-              "DocumentMoniker": "D:\\GitHub\\Paint\\Paint\\Shapes\\Square.cs",
-              "RelativeDocumentMoniker": "..\\Paint\\Shapes\\Square.cs",
-              "ToolTip": "D:\\GitHub\\Paint\\Paint\\Shapes\\Square.cs",
-              "RelativeToolTip": "..\\Paint\\Shapes\\Square.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T19:57:12.487Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Triangle.cs",
-              "DocumentMoniker": "D:\\GitHub\\Paint\\Paint\\Shapes\\Triangle.cs",
-              "RelativeDocumentMoniker": "..\\Paint\\Shapes\\Triangle.cs",
-              "ToolTip": "D:\\GitHub\\Paint\\Paint\\Shapes\\Triangle.cs",
-              "RelativeToolTip": "..\\Paint\\Shapes\\Triangle.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T19:57:12.488Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ComplexShapeDrawer.cs",
-              "DocumentMoniker": "D:\\GitHub\\Paint\\Paint\\Drawers\\ComplexShapeDrawer.cs",
-              "RelativeDocumentMoniker": "..\\Paint\\Drawers\\ComplexShapeDrawer.cs",
-              "ToolTip": "D:\\GitHub\\Paint\\Paint\\Drawers\\ComplexShapeDrawer.cs",
-              "RelativeToolTip": "..\\Paint\\Drawers\\ComplexShapeDrawer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T19:57:12.489Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CircleDrawer.cs",
-              "DocumentMoniker": "D:\\GitHub\\Paint\\Paint\\Drawers\\CircleDrawer.cs",
-              "RelativeDocumentMoniker": "..\\Paint\\Drawers\\CircleDrawer.cs",
-              "ToolTip": "D:\\GitHub\\Paint\\Paint\\Drawers\\CircleDrawer.cs",
-              "RelativeToolTip": "..\\Paint\\Drawers\\CircleDrawer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T19:57:12.489Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ShapeInfo.cs",
-              "DocumentMoniker": "D:\\GitHub\\Paint\\Paint\\Shapes\\ShapeInfo.cs",
-              "RelativeDocumentMoniker": "..\\Paint\\Shapes\\ShapeInfo.cs",
-              "ToolTip": "D:\\GitHub\\Paint\\Paint\\Shapes\\ShapeInfo.cs",
-              "RelativeToolTip": "..\\Paint\\Shapes\\ShapeInfo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T19:57:12.49Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Circle.cs",
-              "DocumentMoniker": "D:\\GitHub\\Paint\\Paint\\Shapes\\Circle.cs",
-              "RelativeDocumentMoniker": "..\\Paint\\Shapes\\Circle.cs",
-              "ToolTip": "D:\\GitHub\\Paint\\Paint\\Shapes\\Circle.cs",
-              "RelativeToolTip": "..\\Paint\\Shapes\\Circle.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T19:57:12.491Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "D:\\GitHub\\Paint\\Paint\\Form1.cs",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "DocumentMoniker": "C:\\Users\\belsk\\source\\repos\\Paintkriseblan\\Paint\\Form1.cs",
               "RelativeDocumentMoniker": "..\\Paint\\Form1.cs",
-              "ToolTip": "D:\\GitHub\\Paint\\Paint\\Form1.cs",
-              "RelativeToolTip": "..\\Paint\\Form1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
-              "WhenOpened": "2024-03-11T19:57:12.492Z"
+              "ToolTip": "C:\\Users\\belsk\\source\\repos\\Paintkriseblan\\Paint\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "RelativeToolTip": "..\\Paint\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-13T14:40:11.256Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "D:\\GitHub\\Paint\\Paint\\Form1.cs",
-              "RelativeDocumentMoniker": "..\\Paint\\Form1.cs",
-              "ToolTip": "D:\\GitHub\\Paint\\Paint\\Form1.cs",
-              "RelativeToolTip": "..\\Paint\\Form1.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
-              "WhenOpened": "2024-03-11T19:57:12.492Z"
+              "DocumentIndex": 1,
+              "Title": "Controller.cs",
+              "DocumentMoniker": "C:\\Users\\belsk\\source\\repos\\Paintkriseblan\\Paint\\Controller.cs",
+              "RelativeDocumentMoniker": "..\\Paint\\Controller.cs",
+              "ToolTip": "C:\\Users\\belsk\\source\\repos\\Paintkriseblan\\Paint\\Controller.cs",
+              "RelativeToolTip": "..\\Paint\\Controller.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAzwH8AAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-13T14:39:41.994Z",
+              "EditorCaption": ""
             }
           ]
         }
