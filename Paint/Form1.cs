@@ -12,7 +12,10 @@ public partial class Form1 : Form
         InitializeComponent();
         controller = new Controller(this);
     }
-
+    //romaroi
+    /// <summary>
+    /// перечисление фигур
+    /// </summary>
     private enum selectedShapes
     {
         Null, Circle, Ellipse, Line, Rectangle, Square, Triangle
@@ -20,11 +23,17 @@ public partial class Form1 : Form
 
     private void pictureBox1_Click(object sender, EventArgs e)
     {
-
+        MessageBox.Show("");
     }
 
     private void toolStripComboBox1_Click(object sender, EventArgs e)
     {
+        MessageBox.Show("");
+        MessageBox.Show("");
+        MessageBox.Show("");
+        MessageBox.Show("");
+        MessageBox.Show("");
+        MessageBox.Show("");
 
     }
 

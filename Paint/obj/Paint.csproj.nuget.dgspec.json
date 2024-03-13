@@ -1,19 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< Updated upstream
-    "C:\\Users\\belsk\\Source\\Repos\\Paintkriseblan\\Paint\\Paint.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\belsk\\Source\\Repos\\Paintkriseblan\\Paint\\Paint.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\belsk\\Source\\Repos\\Paintkriseblan\\Paint\\Paint.csproj",
-        "projectName": "Paint",
-        "projectPath": "C:\\Users\\belsk\\Source\\Repos\\Paintkriseblan\\Paint\\Paint.csproj",
-        "packagesPath": "C:\\Users\\belsk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\belsk\\Source\\Repos\\Paintkriseblan\\Paint\\obj\\",
-=======
     "C:\\Users\\grish\\Desktop\\гит\\newpain\\Paint\\Paint.csproj": {}
   },
   "projects": {
@@ -25,15 +12,13 @@
         "projectPath": "C:\\Users\\grish\\Desktop\\гит\\newpain\\Paint\\Paint.csproj",
         "packagesPath": "C:\\Users\\grish\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\grish\\Desktop\\гит\\newpain\\Paint\\obj\\",
->>>>>>> Stashed changes
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-<<<<<<< Updated upstream
-          "C:\\Users\\belsk\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
           "C:\\Users\\grish\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
->>>>>>> Stashed changes
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -54,11 +39,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -83,7 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
