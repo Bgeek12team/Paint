@@ -17,7 +17,6 @@ internal class Controller
     public List<ComplexShape> CustomShapes { get; set; } = [];
 
     private readonly Graphics graphics;
-    static int d = 50;
     public void DrawCircle(Point p, Color border, Color fill, System.Drawing.Rectangle rect)
     {
         var newShape = new Circle(new(border, fill, rect));
@@ -96,26 +95,29 @@ internal class Controller
 
     public void FillShape(Color fill, Point p)
     {
-        var foundShape = FindShape(p);
+        var foundShape = FindShape(p, out _);
         foundShape.ShapeInfo.FillColor = fill;
         Redraw();
     }
 
     public void EraseShape(Point p)
     {
-        var foundShape = FindShape(p);
-        canvasShapes.Remove(new Point(foundShape.ShapeInfo.Box.Left, foundShape.ShapeInfo.Box.Top));
-        Redraw();
+        var foundShape = FindShape(p, out var point);
+        if (point != null)
+        {
+            canvasShapes.Remove((Point)point);
+            Redraw();
+        }
     }
 
     public void DrawByBrush(Point p, Size size, Color color)
     {
-        Circle newDot = new Circle(new(color, color, new(p, size)));
+        var newDot = new Dot(new(color, color, new(p, size)));
         canvasShapes.TryAdd(p, newDot);
         newDot.Draw(graphics, p);
     }
 
-    private Shape FindShape(Point p)
+    private Shape FindShape(Point p, out Point? adjPoint)
     {
         foreach (var shape in canvasShapes)
         {
@@ -126,9 +128,11 @@ internal class Controller
             if ((shape.Value.ShapeInfo.Box.Left < p.X) && (shape.Value.ShapeInfo.Box.Right > p.X)
                 && (shape.Value.ShapeInfo.Box.Top > p.Y) && (shape.Value.ShapeInfo.Box.Bottom > p.Y))
             {
+                adjPoint = shape.Key;
                 return shape.Value;
             }
         }
+        adjPoint = null;
         return null;
     }
 
