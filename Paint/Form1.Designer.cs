@@ -76,7 +76,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = Color.RosyBrown;
+            pictureBox1.BackColor = Color.WhiteSmoke;
             pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
             pictureBox1.Dock = DockStyle.Right;
             pictureBox1.Location = new Point(0, 0);
@@ -162,12 +162,12 @@
             // trackBar1
             // 
             trackBar1.Location = new Point(0, 31);
-            trackBar1.Maximum = 20;
-            trackBar1.Minimum = 1;
+            trackBar1.Maximum = 100;
+            trackBar1.Minimum = 2;
             trackBar1.Name = "trackBar1";
             trackBar1.Size = new Size(221, 56);
             trackBar1.TabIndex = 5;
-            trackBar1.Value = 1;
+            trackBar1.Value = 10;
             // 
             // groupBox4
             // 
