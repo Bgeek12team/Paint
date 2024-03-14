@@ -136,6 +136,7 @@ internal class Controller
             if (shape.Value.InShape(p))
             {
                 adjPoint = shape.Key;
+                shape.Value.ShapeInfo.Box = rect;
                 return shape.Value;
             }
             shape.Value.ShapeInfo.Box = rect;
@@ -193,10 +194,13 @@ internal class Controller
         // сохранить пол собаки
         SaveToFile(newShape, file.FullName);
     }
-
-    private static void SaveToFile(ComplexShape shape, string file)
+    JsonSerializerOptions options = new JsonSerializerOptions
     {
-        var json = JsonSerializer.Serialize(shape);
+        WriteIndented = true
+    };
+    private void SaveToFile(ComplexShape shape, string file)
+    {
+        var json = JsonSerializer.Serialize(shape, options);
         using var writer = new StreamWriter(file);
         writer.Write(json);
     }
@@ -211,7 +215,7 @@ internal class Controller
             [ts,ts2],
             new(Color.Black, Color.Black, new(10, 10, 10, 10)));
 
-        return testShape;
+        return JsonSerializer.Deserialize<ComplexShape>(json, options);
     }
 
     public bool ReadShapeFromFile(FileInfo fileInfo)
