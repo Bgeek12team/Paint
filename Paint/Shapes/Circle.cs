@@ -32,6 +32,12 @@ public class Circle(ShapeInfo info)
 
     public override bool InShape(Point p)
     {
-        throw new NotImplementedException();
+        var center = new Point(ShapeInfo.Box.X + ShapeInfo.Box.Width / 2, ShapeInfo.Box.Y + ShapeInfo.Box.Height / 2);
+        int radius = ShapeInfo.Box.Width / 2;
+
+        int distanceSquared = (p.X - center.X) * (p.X - center.X) + (p.Y - center.Y) * (p.Y - center.Y);
+        int radiusSquared = radius * radius;
+
+        return distanceSquared <= radiusSquared;
     }
 }

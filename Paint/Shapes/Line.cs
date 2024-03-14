@@ -17,7 +17,13 @@ public class Line(ShapeInfo info)
 
     public override bool InShape(Point p)
     {
-        throw new NotImplementedException();
+        var startPoint = ShapeInfo.Box.Location;
+        var endPoint = new Point(ShapeInfo.Box.Right, ShapeInfo.Box.Bottom);
+
+        double m = (double)(endPoint.Y - startPoint.Y) / (endPoint.X - startPoint.X); 
+        double c = startPoint.Y - m * startPoint.X; 
+
+        return Math.Abs(p.Y - (m * p.X + c)) < 0.1;
     }
 
     public override string ToString() =>

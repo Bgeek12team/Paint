@@ -29,7 +29,9 @@ public class Square(ShapeInfo info)
 
     public override bool InShape(Point p)
     {
-        throw new NotImplementedException();
+        var squareRect = new System.Drawing.Rectangle(ShapeInfo.Box.Location, new Size(Math.Min(ShapeInfo.Box.Width, ShapeInfo.Box.Height), Math.Min(ShapeInfo.Box.Width, ShapeInfo.Box.Height)));
+
+        return squareRect.Contains(p);
     }
 
     public override string ToString() =>

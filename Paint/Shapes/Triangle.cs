@@ -37,7 +37,29 @@ public class Triangle(ShapeInfo info)
 
     public override bool InShape(Point p)
     {
-        throw new NotImplementedException();
+        System.Drawing.Rectangle triangleBox = ShapeInfo.Box;
+        triangleBox.Offset(p);
+
+        Point topVertex = new Point((triangleBox.Left + triangleBox.Right) / 2, triangleBox.Top);
+
+        Point[] trianglePoints = { new Point(triangleBox.Left, triangleBox.Bottom),
+                                   new Point(triangleBox.Right, triangleBox.Bottom),
+                                   topVertex };
+
+        int crossingNumber = 0;
+
+        for (int i = 0; i < 3; i++)
+        {
+            int j = (i + 1) % 3;
+            if (((trianglePoints[i].Y <= p.Y && p.Y < trianglePoints[j].Y) ||
+                (trianglePoints[j].Y <= p.Y && p.Y < trianglePoints[i].Y)) &&
+                (p.X < (trianglePoints[j].X - trianglePoints[i].X) * (p.Y - trianglePoints[i].Y) / (trianglePoints[j].Y - trianglePoints[i].Y) + trianglePoints[i].X))
+            {
+                crossingNumber++;
+            }
+        }
+
+        return crossingNumber % 2 == 1;
     }
 
     public override string ToString() =>

@@ -26,7 +26,13 @@ public class Ellipse(ShapeInfo info)
 
     public override bool InShape(Point p)
     {
-        throw new NotImplementedException();
+        Point center = new Point(ShapeInfo.Box.X + ShapeInfo.Box.Width / 2, ShapeInfo.Box.Y + ShapeInfo.Box.Height / 2);
+        int a = ShapeInfo.Box.Width / 2;
+        int b = ShapeInfo.Box.Height / 2;
+
+        double distanceSquared = Math.Pow(p.X - center.X, 2) / Math.Pow(a, 2) + Math.Pow(p.Y - center.Y, 2) / Math.Pow(b, 2);
+
+        return distanceSquared <= 1;
     }
 
     public override string ToString() =>

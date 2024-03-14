@@ -1,15 +1,39 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\belsk\\source\\repos\\PaintNEWNEW\\MPaintClassLib\\",
+  "WorkspaceRootPath": "C:\\Users\\MB_Markelov\\Documents\\GitHub\\Paint\\MPaintClassLib\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|c:\\users\\belsk\\source\\repos\\paintnewnew\\paint\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|c:\\users\\mb_markelov\\documents\\github\\paint\\paint\\shapes\\ellipse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|c:\\users\\belsk\\source\\repos\\paintnewnew\\paint\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|c:\\users\\mb_markelov\\documents\\github\\paint\\paint\\shapes\\circle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|c:\\users\\belsk\\source\\repos\\paintnewnew\\paint\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|c:\\users\\mb_markelov\\documents\\github\\paint\\paint\\shapes\\complexshape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|c:\\users\\mb_markelov\\documents\\github\\paint\\paint\\shapes\\triangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|c:\\users\\mb_markelov\\documents\\github\\paint\\paint\\shapes\\square.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|c:\\users\\mb_markelov\\documents\\github\\paint\\paint\\shapes\\shape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|c:\\users\\mb_markelov\\documents\\github\\paint\\paint\\shapes\\rectangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|c:\\users\\mb_markelov\\documents\\github\\paint\\paint\\shapes\\line.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|c:\\users\\mb_markelov\\documents\\github\\paint\\paint\\shapes\\shapeinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|c:\\users\\mb_markelov\\documents\\github\\paint\\paint\\shapes\\dot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|c:\\users\\mb_markelov\\documents\\github\\paint\\paint\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,19 +43,85 @@
       "DocumentGroups": [
         {
           "DockedWidth": 204,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 12,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Triangle.cs",
+              "DocumentMoniker": "C:\\Users\\MB_Markelov\\Documents\\GitHub\\Paint\\Paint\\Shapes\\Triangle.cs",
+              "RelativeDocumentMoniker": "..\\Paint\\Shapes\\Triangle.cs",
+              "ToolTip": "C:\\Users\\MB_Markelov\\Documents\\GitHub\\Paint\\Paint\\Shapes\\Triangle.cs",
+              "RelativeToolTip": "..\\Paint\\Shapes\\Triangle.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAADwvy4AAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-14T19:54:11.06Z",
+              "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Square.cs",
+              "DocumentMoniker": "C:\\Users\\MB_Markelov\\Documents\\GitHub\\Paint\\Paint\\Shapes\\Square.cs",
+              "RelativeDocumentMoniker": "..\\Paint\\Shapes\\Square.cs",
+              "ToolTip": "C:\\Users\\MB_Markelov\\Documents\\GitHub\\Paint\\Paint\\Shapes\\Square.cs",
+              "RelativeToolTip": "..\\Paint\\Shapes\\Square.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAADwvx8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-14T19:51:01.166Z",
+              "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Shape.cs",
+              "DocumentMoniker": "C:\\Users\\MB_Markelov\\Documents\\GitHub\\Paint\\Paint\\Shapes\\Shape.cs",
+              "RelativeDocumentMoniker": "..\\Paint\\Shapes\\Shape.cs",
+              "ToolTip": "C:\\Users\\MB_Markelov\\Documents\\GitHub\\Paint\\Paint\\Shapes\\Shape.cs",
+              "RelativeToolTip": "..\\Paint\\Shapes\\Shape.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-14T19:50:35.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Rectangle.cs",
+              "DocumentMoniker": "C:\\Users\\MB_Markelov\\Documents\\GitHub\\Paint\\Paint\\Shapes\\Rectangle.cs",
+              "RelativeDocumentMoniker": "..\\Paint\\Shapes\\Rectangle.cs",
+              "ToolTip": "C:\\Users\\MB_Markelov\\Documents\\GitHub\\Paint\\Paint\\Shapes\\Rectangle.cs",
+              "RelativeToolTip": "..\\Paint\\Shapes\\Rectangle.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAA1wB0AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-14T19:30:08.668Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Line.cs",
+              "DocumentMoniker": "C:\\Users\\MB_Markelov\\Documents\\GitHub\\Paint\\Paint\\Shapes\\Line.cs",
+              "RelativeDocumentMoniker": "..\\Paint\\Shapes\\Line.cs",
+              "ToolTip": "C:\\Users\\MB_Markelov\\Documents\\GitHub\\Paint\\Paint\\Shapes\\Line.cs",
+              "RelativeToolTip": "..\\Paint\\Shapes\\Line.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-14T19:28:06.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ComplexShape.cs",
+              "DocumentMoniker": "C:\\Users\\MB_Markelov\\Documents\\GitHub\\Paint\\Paint\\Shapes\\ComplexShape.cs",
+              "RelativeDocumentMoniker": "..\\Paint\\Shapes\\ComplexShape.cs",
+              "ToolTip": "C:\\Users\\MB_Markelov\\Documents\\GitHub\\Paint\\Paint\\Shapes\\ComplexShape.cs",
+              "RelativeToolTip": "..\\Paint\\Shapes\\ComplexShape.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-14T19:20:22.674Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -50,46 +140,75 @@
               "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Dot.cs",
+              "DocumentMoniker": "C:\\Users\\MB_Markelov\\Documents\\GitHub\\Paint\\Paint\\Shapes\\Dot.cs",
+              "RelativeDocumentMoniker": "..\\Paint\\Shapes\\Dot.cs",
+              "ToolTip": "C:\\Users\\MB_Markelov\\Documents\\GitHub\\Paint\\Paint\\Shapes\\Dot.cs",
+              "RelativeToolTip": "..\\Paint\\Shapes\\Dot.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-14T19:20:39.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ShapeInfo.cs",
+              "DocumentMoniker": "C:\\Users\\MB_Markelov\\Documents\\GitHub\\Paint\\Paint\\Shapes\\ShapeInfo.cs",
+              "RelativeDocumentMoniker": "..\\Paint\\Shapes\\ShapeInfo.cs",
+              "ToolTip": "C:\\Users\\MB_Markelov\\Documents\\GitHub\\Paint\\Paint\\Shapes\\ShapeInfo.cs",
+              "RelativeToolTip": "..\\Paint\\Shapes\\ShapeInfo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-14T19:12:11.42Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Controller.cs",
-              "DocumentMoniker": "C:\\Users\\belsk\\source\\repos\\PaintNEWNEW\\Paint\\Controller.cs",
-              "RelativeDocumentMoniker": "..\\Paint\\Controller.cs",
-              "ToolTip": "C:\\Users\\belsk\\source\\repos\\PaintNEWNEW\\Paint\\Controller.cs",
-              "RelativeToolTip": "..\\Paint\\Controller.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAnwCcAAAAEAAAA",
+              "Title": "Circle.cs",
+              "DocumentMoniker": "C:\\Users\\MB_Markelov\\Documents\\GitHub\\Paint\\Paint\\Shapes\\Circle.cs",
+              "RelativeDocumentMoniker": "..\\Paint\\Shapes\\Circle.cs",
+              "ToolTip": "C:\\Users\\MB_Markelov\\Documents\\GitHub\\Paint\\Paint\\Shapes\\Circle.cs",
+              "RelativeToolTip": "..\\Paint\\Shapes\\Circle.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAowCcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T19:35:25.237Z",
+              "WhenOpened": "2024-03-14T19:11:22.003Z",
               "EditorCaption": ""
             },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Controller.cs",
+              "DocumentMoniker": "C:\\Users\\MB_Markelov\\Documents\\GitHub\\Paint\\Paint\\Controller.cs",
+              "RelativeDocumentMoniker": "..\\Paint\\Controller.cs",
+              "ToolTip": "C:\\Users\\MB_Markelov\\Documents\\GitHub\\Paint\\Paint\\Controller.cs",
+              "RelativeToolTip": "..\\Paint\\Controller.cs",
+              "ViewState": "AQIAAHMAAAAAAAAAAAAUwIkAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-14T19:09:01.392Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 204,
+          "SelectedChildIndex": 0,
+          "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\belsk\\source\\repos\\PaintNEWNEW\\Paint\\Form1.cs",
-              "RelativeDocumentMoniker": "..\\Paint\\Form1.cs",
-              "ToolTip": "C:\\Users\\belsk\\source\\repos\\PaintNEWNEW\\Paint\\Form1.cs",
-              "RelativeToolTip": "..\\Paint\\Form1.cs",
-              "ViewState": "AQIAAEwAAAAAAAAAAAAwwJMAAAAUAAAA",
+              "Title": "Ellipse.cs",
+              "DocumentMoniker": "C:\\Users\\MB_Markelov\\Documents\\GitHub\\Paint\\Paint\\Shapes\\Ellipse.cs",
+              "RelativeDocumentMoniker": "..\\Paint\\Shapes\\Ellipse.cs",
+              "ToolTip": "C:\\Users\\MB_Markelov\\Documents\\GitHub\\Paint\\Paint\\Shapes\\Ellipse.cs",
+              "RelativeToolTip": "..\\Paint\\Shapes\\Ellipse.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAADwvx8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T19:15:22.09Z",
+              "WhenOpened": "2024-03-14T19:23:23.242Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
-              "DocumentMoniker": "C:\\Users\\belsk\\source\\repos\\PaintNEWNEW\\Paint\\Form1.cs",
-              "RelativeDocumentMoniker": "..\\Paint\\Form1.cs",
-              "ToolTip": "C:\\Users\\belsk\\source\\repos\\PaintNEWNEW\\Paint\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
-              "RelativeToolTip": "..\\Paint\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T19:10:46.624Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]"
             }
           ]
         }
