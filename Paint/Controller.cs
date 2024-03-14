@@ -122,9 +122,12 @@ internal class Controller
 
     public void DrawByBrush(Point p, Size size, Color color)
     {
-        var newDot = new Dot(new(color, color, new(p, size)));
+        var rect = new System.Drawing.Rectangle(p, size);
+        rect.Offset(-rect.Location.X, -rect.Location.Y);
+        var newDot = new Dot(new(color, color, rect));
         canvasShapes.TryAdd(p, newDot);
         newDot.Draw(graphics, p);
+        rect.Offset(rect.Location.X, rect.Location.Y);
     }
 
     private Shape FindShape(Point p, out Point? adjPoint)
@@ -134,9 +137,10 @@ internal class Controller
             // кодга будет реализовано: 
             //if (shape.Value.GetUtils().InShape(shape.Key))
             //    return shape.Value;
-            
-            if ((shape.Value.ShapeInfo.Box.Left < p.X) && (shape.Value.ShapeInfo.Box.Right > p.X)
-                && (shape.Value.ShapeInfo.Box.Top < p.Y) && (shape.Value.ShapeInfo.Box.Bottom > p.Y))
+            var rect = shape.Value.ShapeInfo.Box;
+            rect.Offset(shape.Key);
+            if ((rect.Left < p.X) && (rect.Right > p.X)
+                && (rect.Top < p.Y) && (rect.Bottom > p.Y))
             {
                 adjPoint = shape.Key;
                 return shape.Value;
@@ -168,17 +172,19 @@ internal class Controller
         //  переделать по людски 
         System.Drawing.Rectangle? rectangle = new();
         var shapes = new List<Shape>();
-        foreach (var shape in canvasShapes.Values)
+        foreach (var shape in canvasShapes)
         {
-            if (shape.ShapeInfo.Box.IntersectsWith(rect))
+            var rectang = shape.Value.ShapeInfo.Box;
+            rectang.Offset(shape.Key);
+            if (rectang.IntersectsWith(rect))
             {
                 if (rectangle == null)
                 {
-                    rectangle = shape.ShapeInfo.Box;
+                    rectangle = rectang;
                     continue;
                 }
-                rectangle = CombineRectangles((System.Drawing.Rectangle)rectangle, shape.ShapeInfo.Box);
-                shapes.Add(shape);
+                rectangle = CombineRectangles((System.Drawing.Rectangle)rectangle, rectang);
+                shapes.Add(shape.Value);
             }
         }
         if (rectangle == null)

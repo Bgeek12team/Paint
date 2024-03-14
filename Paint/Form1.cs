@@ -146,11 +146,6 @@ public partial class Form1 : Form
             controller.DrawByBrush(e.Location, new(trackBar1.Value, trackBar1.Value), customColor);
             return;
         }
-        if (tools == Tools.Erase)
-        {
-            controller.EraseShape(e.Location);
-            return;
-        }
         if (selectedShapes == SelectedShapes.Circle)
         {
             isDrawing = true;
