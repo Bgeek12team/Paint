@@ -116,7 +116,11 @@ public partial class Form1 : Form
 
     private Rectangle GetRectangle(Point startPoint, Point endPoint)
     {
-        return new Rectangle(startPoint.X, startPoint.Y, Math.Abs(endPoint.X - startPoint.X), Math.Abs(endPoint.Y - startPoint.Y));
+        var lu = DefineLeftUpperPoint(startPoint, endPoint);
+        var rd = DefineRigthDownPoint(startPoint, endPoint);
+        var size = new Size(rd.X - lu.X, rd.Y - lu.Y);
+        return new Rectangle(lu, size);
+        
     }
     private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
     {
@@ -140,14 +144,18 @@ public partial class Form1 : Form
         }
     }
 
+    Point DefineLeftUpperPoint(Point a, Point b) =>
+        new Point(Math.Min(a.X, b.X), Math.Min(a.Y, b.Y));
 
+    Point DefineRigthDownPoint(Point a, Point b) =>
+        new Point(Math.Max(a.X, b.X), Math.Max(a.Y, b.Y));
     private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
     {
         isMouse = false;
         endPoint = e.Location;
         if(isDrawing)
         {
-            controller.DrawEllipse(startPoint, Color.Transparent, customColor, GetRectangle(startPoint, endPoint));
+            controller.DrawEllipse(DefineLeftUpperPoint(startPoint, endPoint), Color.Transparent, customColor, GetRectangle(startPoint, endPoint));
             controller.Redraw();
             isDrawing = false;
         }
