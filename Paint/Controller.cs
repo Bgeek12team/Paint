@@ -73,17 +73,6 @@ internal class Controller
         newShape.Draw(graphics, p);
     }
 
-    /*
-    public void Draw<T>(Point p, ShapeInfo info) where T : Shape, new()
-    {
-        Shape newShape = new T
-        {
-            ShapeInfo = info
-        };
-        canvasShapes.Add(p, newShape);
-        newShape.GetDrawer().Draw(graphics, p);
-    } */
-
     public void DrawCustomShape(int index, Point p)
     {
         canvasShapes.TryAdd(p, CustomShapes[index]);
@@ -196,7 +185,7 @@ internal class Controller
             shapes,
             new ShapeInfo(Color.Black, Color.Black, (System.Drawing.Rectangle)rectangle)
             );
-        // сохранить собсна
+        // сохранить пол собаки
         SaveToFile(newShape, file.FullName);
     }
 

@@ -12,7 +12,12 @@ public class Line(ShapeInfo info)
             StartCap = System.Drawing.Drawing2D.LineCap.Round,
             EndCap = System.Drawing.Drawing2D.LineCap.Round
         };
-        graphics.DrawLine(outlinePen, ShapeInfo.Box.Location, new Point(ShapeInfo.Box.Right, ShapeInfo.Box.Bottom));
+
+        var p1 = new Point(ShapeInfo.Box.Left, ShapeInfo.Box.Top); ;
+        var p2 = new Point(ShapeInfo.Box.Right, ShapeInfo.Box.Bottom);
+        p1.Offset(p);
+        p2.Offset(p);
+        graphics.DrawLine(outlinePen, p1, p2);
     }
 
     public override bool InShape(Point p)

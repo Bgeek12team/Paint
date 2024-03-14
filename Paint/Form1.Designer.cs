@@ -456,6 +456,7 @@
             Controls.Add(groupBox1);
             Controls.Add(pictureBox1);
             Controls.Add(groupBox7);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Form1";
             Text = "PAINt";
             MouseDown += Form1_MouseDown;

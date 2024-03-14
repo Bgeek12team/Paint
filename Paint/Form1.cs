@@ -70,44 +70,10 @@ public partial class Form1 : Form
     private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
     {
         isMouse = true;
-        isDrawing = true;
+        if(selectedShapes != SelectedShapes.Null)
+            isDrawing = true;
         startPoint = e.Location;
-        //if (selectedShapes == SelectedShapes.Circle)
-        //{
-        //    var rect = new Rectangle(e.Location, new(trackBar1.Value * 5, trackBar1.Value * 5));
-        //    controller.DrawCircle(e.Location, customColor, Color.White, rect);
-        //    return;
-        //}
-        //if (selectedShapes == SelectedShapes.Ellipse)
-        //{
-        //    var rect = new Rectangle(e.Location, new(trackBar1.Value * 10, trackBar1.Value * 5));
-        //    controller.DrawEllipse(e.Location, customColor, Color.White, rect);
-        //    return;
-        //}
-        //if (selectedShapes == SelectedShapes.Line)
-        //{
-        //    var rect = new Rectangle(e.Location, new(trackBar1.Value * 5, trackBar1.Value * 5));
-        //    controller.DrawLine(e.Location, customColor, Color.White, rect);
-        //    return;
-        //}
-        //if (selectedShapes == SelectedShapes.Rectangle)
-        //{
-        //    var rect = new Rectangle(e.Location, new(trackBar1.Value * 10, trackBar1.Value * 5));
-        //    controller.DrawRectangle(e.Location, customColor, Color.White, rect);
-        //    return;
-        //}
-        //if (selectedShapes == SelectedShapes.Square)
-        //{
-        //    var rect = new Rectangle(e.Location, new(trackBar1.Value * 5, trackBar1.Value * 5));
-        //    controller.DrawSquare(e.Location, customColor, Color.White, rect);
-        //    return;
-        //}
-        //if (selectedShapes == SelectedShapes.Triangle)
-        //{
-        //    var rect = new Rectangle(e.Location, new(trackBar1.Value * 5, trackBar1.Value * 5));
-        //    controller.DrawTriangle(e.Location, customColor, Color.White, rect);
-        //    return;
-        //}
+        
         if (tools == Tools.Brush)
         {
             controller.DrawByBrush(e.Location, new(trackBar1.Value, trackBar1.Value), customColor);
@@ -146,13 +112,8 @@ public partial class Form1 : Form
             controller.DrawByBrush(e.Location, new(trackBar1.Value, trackBar1.Value), customColor);
             return;
         }
-        if (selectedShapes == SelectedShapes.Circle)
-        {
-            isDrawing = true;
-            endPoint = e.Location;
-            GetGraphics().DrawEllipse(new(customColor, 5), startPoint.X, startPoint.Y, endPoint.X - startPoint.X, endPoint.Y - startPoint.Y);
-            pictureBox1.Invalidate();
-        }
+        
+
     }
 
     private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
@@ -162,12 +123,34 @@ public partial class Form1 : Form
         if (isDrawing)
         {
             if (selectedShapes == SelectedShapes.Ellipse)
-                controller.DrawEllipse(DefineLeftUpperPoint(startPoint, endPoint), Color.Transparent, customColor, GetRectangle(startPoint, endPoint));
-            
+                controller.DrawEllipse(DefineLeftUpperPoint(startPoint, endPoint), Color.Transparent, 
+                    customColor, GetRectangle(startPoint, endPoint));
+
+            if (selectedShapes == SelectedShapes.Line)
+                controller.DrawLine(DefineLeftUpperPoint(startPoint, endPoint), customColor,
+                    customColor, GetRectangle(startPoint, endPoint));
+
+            if (selectedShapes == SelectedShapes.Triangle)
+                controller.DrawTriangle(DefineLeftUpperPoint(startPoint, endPoint), Color.Transparent,
+                    customColor, GetRectangle(startPoint, endPoint));
+
+            if (selectedShapes == SelectedShapes.Square)
+                controller.DrawSquare(DefineLeftUpperPoint(startPoint, endPoint), Color.Transparent, 
+                    customColor, GetRectangle(startPoint, endPoint));
+
+
+            if (selectedShapes == SelectedShapes.Rectangle)
+                controller.DrawRectangle(DefineLeftUpperPoint(startPoint, endPoint), Color.Transparent, 
+                    customColor, GetRectangle(startPoint, endPoint));
+
+            if (selectedShapes == SelectedShapes.Circle)
+                controller.DrawCircle(DefineLeftUpperPoint(startPoint, endPoint), Color.Transparent, 
+                    customColor, GetRectangle(startPoint, endPoint));
+
             if (selectedShapes == SelectedShapes.Loaded)
                 controller.DrawCustomShape(loadedShapeIndex, startPoint);
 
-            controller.Redraw();
+            //controller.Redraw();
             isDrawing = false;
         }
         if (selecting)
@@ -178,30 +161,8 @@ public partial class Form1 : Form
 
     }
 
-    private void circle_button_Click(object sender, EventArgs e)
+    void FillGroupBox(GroupBox gb, List<ComplexShape> shapes, string name)
     {
-        selectedShapes = SelectedShapes.Circle;
-        tools = Tools.Null;
-    }
-
-    private void ellipse_button_Click(object sender, EventArgs e)
-    {
-        selectedShapes = SelectedShapes.Ellipse;
-        tools = Tools.Null;
-    }
-
-    private void fileopen_button_Click(object sender, EventArgs e)
-    {
-        if (openFileDialog1.ShowDialog() == DialogResult.OK)
-        {
-            if(controller.ReadShapeFromFile(new FileInfo(openFileDialog1.FileName)))
-                FillGroupBox(groupBox7, controller.CustomShapes, openFileDialog1.SafeFileName);
-        }
-    }
-
-    
-     void FillGroupBox(GroupBox gb, List<ComplexShape> shapes, string name)
-     {
         var button = new Button
         {
             Size = new(100, 50),
@@ -218,7 +179,28 @@ public partial class Form1 : Form
         gb.Controls.Add(button);
         button.Show();
         gb.Refresh();
-     }
+    }
+    private void fileopen_button_Click(object sender, EventArgs e)
+    {
+        if (openFileDialog1.ShowDialog() == DialogResult.OK)
+        {
+            if (controller.ReadShapeFromFile(new FileInfo(openFileDialog1.FileName)))
+                FillGroupBox(groupBox7, controller.CustomShapes, openFileDialog1.SafeFileName);
+        }
+    }
+
+    #region Shapes
+    private void circle_button_Click(object sender, EventArgs e)
+    {
+        selectedShapes = SelectedShapes.Circle;
+        tools = Tools.Null;
+    }
+
+    private void ellipse_button_Click(object sender, EventArgs e)
+    {
+        selectedShapes = SelectedShapes.Ellipse;
+        tools = Tools.Null;
+    }
 
     private void line_button_Click(object sender, EventArgs e)
     {
@@ -243,7 +225,9 @@ public partial class Form1 : Form
         selectedShapes = SelectedShapes.Triangle;
         tools = Tools.Null;
     }
+    #endregion
 
+    #region Tools
     private void brush_button_Click(object sender, EventArgs e)
     {
         tools = Tools.Brush;
@@ -268,7 +252,9 @@ public partial class Form1 : Form
         selecting = true;
         selectedShapes = SelectedShapes.Null;
     }
+    #endregion
 
+    #region Colors
     private void Black_button_Click(object sender, EventArgs e)
     {
         customColor = Color.Black;
@@ -318,6 +304,7 @@ public partial class Form1 : Form
     {
         customColor = Color.Lime;
     }
+    #endregion
 
     private void clear_button_Click(object sender, EventArgs e)
     {

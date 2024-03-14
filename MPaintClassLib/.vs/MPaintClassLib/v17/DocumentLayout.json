@@ -1,15 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\belsk\\source\\repos\\PaintNEWNEW\\MPaintClassLib\\",
+  "WorkspaceRootPath": "C:\\Users\\belsk\\source\\repos\\Paint2\\MPaintClassLib\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|c:\\users\\belsk\\source\\repos\\paintnewnew\\paint\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|c:\\users\\belsk\\source\\repos\\paint2\\paint\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|c:\\users\\belsk\\source\\repos\\paintnewnew\\paint\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|c:\\users\\belsk\\source\\repos\\paint2\\paint\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|c:\\users\\belsk\\source\\repos\\paintnewnew\\paint\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|c:\\users\\belsk\\source\\repos\\paint2\\paint\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DDF902B-BCCF-4D2F-8738-F431F1B4FAFE}|..\\Paint\\Paint.csproj|c:\\users\\belsk\\source\\repos\\paint2\\paint\\shapes\\line.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 204,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -55,40 +58,52 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Controller.cs",
-              "DocumentMoniker": "C:\\Users\\belsk\\source\\repos\\PaintNEWNEW\\Paint\\Controller.cs",
-              "RelativeDocumentMoniker": "..\\Paint\\Controller.cs",
-              "ToolTip": "C:\\Users\\belsk\\source\\repos\\PaintNEWNEW\\Paint\\Controller.cs",
-              "RelativeToolTip": "..\\Paint\\Controller.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAnwCcAAAAEAAAA",
+              "DocumentIndex": 3,
+              "Title": "Line.cs",
+              "DocumentMoniker": "C:\\Users\\belsk\\source\\repos\\Paint2\\Paint\\Shapes\\Line.cs",
+              "RelativeDocumentMoniker": "..\\Paint\\Shapes\\Line.cs",
+              "ToolTip": "C:\\Users\\belsk\\source\\repos\\Paint2\\Paint\\Shapes\\Line.cs",
+              "RelativeToolTip": "..\\Paint\\Shapes\\Line.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T19:35:25.237Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-14T20:05:06.042Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\belsk\\source\\repos\\PaintNEWNEW\\Paint\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\belsk\\source\\repos\\Paint2\\Paint\\Form1.cs",
               "RelativeDocumentMoniker": "..\\Paint\\Form1.cs",
-              "ToolTip": "C:\\Users\\belsk\\source\\repos\\PaintNEWNEW\\Paint\\Form1.cs",
+              "ToolTip": "C:\\Users\\belsk\\source\\repos\\Paint2\\Paint\\Form1.cs",
               "RelativeToolTip": "..\\Paint\\Form1.cs",
-              "ViewState": "AQIAAEwAAAAAAAAAAAAwwJMAAAAUAAAA",
+              "ViewState": "AQIAAJgAAAAAAAAAAAAAAJgAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T19:15:22.09Z",
+              "WhenOpened": "2024-03-14T19:17:18.764Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Controller.cs",
+              "DocumentMoniker": "C:\\Users\\belsk\\source\\repos\\Paint2\\Paint\\Controller.cs",
+              "RelativeDocumentMoniker": "..\\Paint\\Controller.cs",
+              "ToolTip": "C:\\Users\\belsk\\source\\repos\\Paint2\\Paint\\Controller.cs",
+              "RelativeToolTip": "..\\Paint\\Controller.cs",
+              "ViewState": "AQIAAKwAAAAAAAAAAAAawLsAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-14T19:17:15.757Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
-              "DocumentMoniker": "C:\\Users\\belsk\\source\\repos\\PaintNEWNEW\\Paint\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\belsk\\source\\repos\\Paint2\\Paint\\Form1.cs",
               "RelativeDocumentMoniker": "..\\Paint\\Form1.cs",
-              "ToolTip": "C:\\Users\\belsk\\source\\repos\\PaintNEWNEW\\Paint\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "ToolTip": "C:\\Users\\belsk\\source\\repos\\Paint2\\Paint\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
               "RelativeToolTip": "..\\Paint\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T19:10:46.624Z",
+              "WhenOpened": "2024-03-14T19:17:15.023Z",
               "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]"
             }
           ]
