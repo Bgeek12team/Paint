@@ -27,7 +27,8 @@ public class Rectangle(ShapeInfo info)
 
     public override bool InShape(Point p)
     {
-        throw new NotImplementedException();
+        var rect = new System.Drawing.Rectangle(ShapeInfo.Box.Location, ShapeInfo.Box.Size);
+        return rect.Contains(p);
     }
 
     public override string ToString() =>
