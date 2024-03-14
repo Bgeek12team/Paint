@@ -9,7 +9,7 @@ public class Square(ShapeInfo info)
     {
         int sideLength = Math.Min(ShapeInfo.Box.Width, ShapeInfo.Box.Height);
         System.Drawing.Rectangle squareRect = new System.Drawing.Rectangle(ShapeInfo.Box.Location, new Size(sideLength, sideLength));
-
+        squareRect.Offset(p);
         var outlinePen = new Pen(ShapeInfo.BorderColor)
         {
             StartCap = System.Drawing.Drawing2D.LineCap.Round,
@@ -21,7 +21,7 @@ public class Square(ShapeInfo info)
         {
             
             using var fillBrush = new SolidBrush(ShapeInfo.FillColor);
-            var rect = ShapeInfo.Box;
+            var rect = squareRect;
             rect.Inflate(-FILL_MARGIN, -FILL_MARGIN);
             graphics.FillRectangle(fillBrush, rect);
         }

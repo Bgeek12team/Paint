@@ -1,3 +1,4 @@
+using MPaintClassLib.Shares;
 using System.Drawing;
 using System.Net;
 using System.Windows.Forms;
@@ -13,9 +14,28 @@ public partial class Form1 : Form
     private Tools tools;
     private bool isMouse = false;
     private bool isDrawing = false;
+    private bool selecting = false;
+    Graphics g;
+    Color customColor = Color.Black;
+
+    private int loadedShapeIndex = -1;
     private enum SelectedShapes
     {
-        Null, Circle, Ellipse, Line, Rectangle, Square, Triangle
+        Null, Circle, Ellipse, Line, Rectangle, Square, Triangle, Loaded
+    }
+    public Graphics GetGraphics() =>
+        g ??= this.pictureBox1.CreateGraphics();
+
+
+    Point DefineLeftUpperPoint(Point a, Point b) =>
+        new Point(Math.Min(a.X, b.X), Math.Min(a.Y, b.Y));
+
+    Point DefineRigthDownPoint(Point a, Point b) =>
+        new Point(Math.Max(a.X, b.X), Math.Max(a.Y, b.Y));
+
+    private enum Tools
+    {
+        Null, Brush, Erase, Fill, Selection
     }
     public Form1()
     {
@@ -32,19 +52,10 @@ public partial class Form1 : Form
 
     }
 
-    Graphics g;
-    public Graphics GetGraphics() =>
-        g ??= this.pictureBox1.CreateGraphics();
-
-    private enum Tools
-    {
-        Null, Brush, Erase, Fill, Selection
-    }
     private void pictureBox1_Click(object sender, EventArgs e)
     {
 
     }
-    Color customColor = Color.Black;
 
     private void button1_Click(object sender, EventArgs e)
     {
@@ -112,15 +123,20 @@ public partial class Form1 : Form
             controller.FillShape(customColor, e.Location);
             return;
         }
+        if (tools == Tools.Selection)
+        {
+            isDrawing = false;
+            startPoint = e.Location;
+        }
     }
 
-    private Rectangle GetRectangle(Point startPoint, Point endPoint)
+    private System.Drawing.Rectangle GetRectangle(Point startPoint, Point endPoint)
     {
         var lu = DefineLeftUpperPoint(startPoint, endPoint);
         var rd = DefineRigthDownPoint(startPoint, endPoint);
         var size = new Size(rd.X - lu.X, rd.Y - lu.Y);
-        return new Rectangle(lu, size);
-        
+        return new(lu, size);
+
     }
     private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
     {
@@ -144,29 +160,33 @@ public partial class Form1 : Form
         }
     }
 
-    Point DefineLeftUpperPoint(Point a, Point b) =>
-        new Point(Math.Min(a.X, b.X), Math.Min(a.Y, b.Y));
-
-    Point DefineRigthDownPoint(Point a, Point b) =>
-        new Point(Math.Max(a.X, b.X), Math.Max(a.Y, b.Y));
     private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
     {
         isMouse = false;
         endPoint = e.Location;
-        if(isDrawing)
+        if (isDrawing)
         {
-            controller.DrawEllipse(DefineLeftUpperPoint(startPoint, endPoint), Color.Transparent, customColor, GetRectangle(startPoint, endPoint));
+            if (selectedShapes == SelectedShapes.Ellipse)
+                controller.DrawEllipse(DefineLeftUpperPoint(startPoint, endPoint), Color.Transparent, customColor, GetRectangle(startPoint, endPoint));
+            
+            if (selectedShapes == SelectedShapes.Loaded)
+                controller.DrawCustomShape(loadedShapeIndex, startPoint);
+
             controller.Redraw();
             isDrawing = false;
         }
-        
+        if (selecting)
+        {
+            endPoint = e.Location;
+            selecting = false;
+        }
+
     }
 
     private void circle_button_Click(object sender, EventArgs e)
     {
         selectedShapes = SelectedShapes.Circle;
         tools = Tools.Null;
-
     }
 
     private void ellipse_button_Click(object sender, EventArgs e)
@@ -179,9 +199,31 @@ public partial class Form1 : Form
     {
         if (openFileDialog1.ShowDialog() == DialogResult.OK)
         {
-            controller.ReadShapeFromFile(new FileInfo(openFileDialog1.FileName));
+            if(controller.ReadShapeFromFile(new FileInfo(openFileDialog1.FileName)))
+                FillGroupBox(groupBox7, controller.CustomShapes, openFileDialog1.SafeFileName);
         }
     }
+
+    
+     void FillGroupBox(GroupBox gb, List<ComplexShape> shapes, string name)
+     {
+        var button = new Button
+        {
+            Size = new(100, 50),
+            Left = shapes.Count * 100 + 10,
+            Top = 33,
+            Text = name
+        };
+        button.Click += (s, e) =>
+        {
+            selectedShapes = SelectedShapes.Loaded;
+            tools = Tools.Null;
+            loadedShapeIndex = gb.Controls.IndexOf(button);
+        };
+        gb.Controls.Add(button);
+        button.Show();
+        gb.Refresh();
+     }
 
     private void line_button_Click(object sender, EventArgs e)
     {
@@ -228,6 +270,7 @@ public partial class Form1 : Form
     private void selection_button_Click(object sender, EventArgs e)
     {
         tools = Tools.Selection;
+        selecting = true;
         selectedShapes = SelectedShapes.Null;
     }
 
@@ -309,38 +352,19 @@ public partial class Form1 : Form
 
     }
 
-    private void pictureBox2_Click(object sender, EventArgs e)
+
+    private void filesave_button_Click(object sender, EventArgs e)
     {
+        if (!selecting)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "JSON|*.json";
+            saveFileDialog1.Title = "Save an shape";
+            saveFileDialog1.ShowDialog();
+            if (saveFileDialog1.FileName != "")
+                controller.SaveShapeToFile(GetRectangle(startPoint, endPoint), new FileInfo(saveFileDialog1.FileName));
 
-    }
-
-    private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
-    {
-
-    }
-
-    private void pictureBox2_MouseMove(object sender, MouseEventArgs e)
-    {
-        
-    }
-
-    private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
-    {
-        
-    }
-
-    private void panel1_MouseDown(object sender, MouseEventArgs e)
-    {
-        
-    }
-
-    private void panel1_MouseMove(object sender, MouseEventArgs e)
-    {
-        
-    }
-
-    private void panel1_MouseUp(object sender, MouseEventArgs e)
-    {
-        
+            selecting = false;
+        }
     }
 }

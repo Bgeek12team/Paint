@@ -12,12 +12,13 @@ public class Ellipse(ShapeInfo info)
             StartCap = System.Drawing.Drawing2D.LineCap.Round,
             EndCap = System.Drawing.Drawing2D.LineCap.Round
         };
+        var rect = ShapeInfo.Box;
+        rect.Offset(p);
         graphics.DrawEllipse(outlinePen, ShapeInfo.Box);
 
         if (ShapeInfo.FillColor != Color.Transparent)
         {
             using var fillBrush = new SolidBrush(ShapeInfo.FillColor);
-            var rect = ShapeInfo.Box;
             rect.Inflate(-FILL_MARGIN, -FILL_MARGIN);
             graphics.FillEllipse(fillBrush, rect);
         }

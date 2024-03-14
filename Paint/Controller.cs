@@ -19,6 +19,7 @@ internal class Controller
     private readonly Graphics graphics;
     public void DrawCircle(Point p, Color border, Color fill, System.Drawing.Rectangle rect)
     {
+        rect.Offset(-rect.Location.X, -rect.Location.Y);
         var newShape = new Circle(new(border, fill, rect));
         canvasShapes.TryAdd(p, newShape);
         newShape.Draw(graphics, p);
@@ -26,6 +27,7 @@ internal class Controller
 
     public void DrawLine(Point p, Color border, Color fill, System.Drawing.Rectangle rect)
     {
+        rect.Offset(-rect.Location.X, -rect.Location.Y);
         Shape newShape = new Line(new(border, fill, rect));
         canvasShapes.TryAdd(p, newShape);
         newShape.Draw(graphics, p);
@@ -33,6 +35,7 @@ internal class Controller
 
     public void DrawEllipse(Point p, Color border, Color fill, System.Drawing.Rectangle rect)
     {
+        rect.Offset(-rect.Location.X, -rect.Location.Y);
         Ellipse newShape = new Ellipse(new(border, fill, rect));
         canvasShapes.TryAdd(p, newShape);
         newShape.Draw(graphics, p);
@@ -40,6 +43,7 @@ internal class Controller
 
     public void DrawSquare(Point p, Color border, Color fill, System.Drawing.Rectangle rect)
     {
+        rect.Offset(-rect.Location.X, -rect.Location.Y);
         Shape newShape = new Square(new(border, fill, rect));
         canvasShapes.TryAdd(p, newShape);
         newShape.Draw(graphics, p);
@@ -47,6 +51,7 @@ internal class Controller
 
     public void DrawRectangle(Point p, Color border, Color fill, System.Drawing.Rectangle rect)
     {
+        rect.Offset(-rect.Location.X, -rect.Location.Y);
         Shape newShape = new MPaintClassLib.Shares.Rectangle(new(border, fill, rect));
         canvasShapes.TryAdd(p, newShape);
         newShape.Draw(graphics, p);
@@ -54,6 +59,7 @@ internal class Controller
 
     public void DrawTriangle(Point p, Color border, Color fill, System.Drawing.Rectangle rect)
     {
+        rect.Offset(-rect.Location.X, -rect.Location.Y);
         Shape newShape = new Triangle(new(border, fill, rect));
         canvasShapes.TryAdd(p, newShape);
         newShape.Draw(graphics, p);
@@ -61,6 +67,7 @@ internal class Controller
 
     public void DrawComplexShape(Point p, IEnumerable<Shape> shapes, ShapeInfo info)
     {
+        
         Shape newShape = new ComplexShape(shapes, info);
         canvasShapes.TryAdd(p, newShape);
         newShape.Draw(graphics, p);
@@ -95,9 +102,12 @@ internal class Controller
 
     public void FillShape(Color fill, Point p)
     {
-        var foundShape = FindShape(p, out _);
-        foundShape.ShapeInfo.FillColor = fill;
-        Redraw();
+        var foundShape = FindShape(p, out var point);
+        if (point != null)
+        {
+            foundShape.ShapeInfo.FillColor = fill;
+            Redraw();
+        }
     }
 
     public void EraseShape(Point p)
@@ -151,11 +161,13 @@ internal class Controller
     /// Сохранить фигуру в файл
     /// </summary>
     /// <param name="shapes"></param>
+    
     public void SaveShapeToFile(System.Drawing.Rectangle rect, FileInfo file)
     {
         // определить какие фигуры выделены
-        // сука переделать по людски 
+        //  переделать по людски 
         System.Drawing.Rectangle? rectangle = new();
+        var shapes = new List<Shape>();
         foreach (var shape in canvasShapes.Values)
         {
             if (shape.ShapeInfo.Box.IntersectsWith(rect))
@@ -166,6 +178,7 @@ internal class Controller
                     continue;
                 }
                 rectangle = CombineRectangles((System.Drawing.Rectangle)rectangle, shape.ShapeInfo.Box);
+                shapes.Add(shape);
             }
         }
         if (rectangle == null)
@@ -174,12 +187,11 @@ internal class Controller
         }
         // составить complex shape
         var newShape = new ComplexShape(
-            canvasShapes.Values.Where(shape => shape.ShapeInfo.Box.IntersectsWith(rect)),
+            shapes,
             new ShapeInfo(Color.Black, Color.Black, (System.Drawing.Rectangle)rectangle)
             );
         // сохранить собсна
-        SaveToFile(newShape, file.DirectoryName);
-        throw new NotImplementedException();
+        SaveToFile(newShape, file.FullName);
     }
 
     private static void SaveToFile(ComplexShape shape, string file)
@@ -189,15 +201,22 @@ internal class Controller
         writer.Write(json);
     }
 
-    private static ComplexShape? ReadFromFile(string file)
+    private ComplexShape? ReadFromFile(string file)
     {
         var json = File.ReadAllText(file);
-        return JsonSerializer.Deserialize<ComplexShape>(json);
+
+        Shape ts = new Circle(new(Color.Black, Color.Black, new(10, 100, 10, 10)));
+        Shape ts2 = new Triangle(new(Color.Black, Color.Black, new(100, 10, 10, 10)));
+        var testShape = new ComplexShape(
+            [ts,ts2],
+            new(Color.Black, Color.Black, new(10, 10, 10, 10)));
+
+        return testShape;
     }
 
     public bool ReadShapeFromFile(FileInfo fileInfo)
     {
-        var shape = ReadFromFile(fileInfo.DirectoryName);
+        var shape = ReadFromFile(fileInfo.FullName);
         if (shape == null)
             return false;
 

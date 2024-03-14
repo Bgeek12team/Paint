@@ -12,13 +12,14 @@ public class Rectangle(ShapeInfo info)
             StartCap = System.Drawing.Drawing2D.LineCap.Round,
             EndCap = System.Drawing.Drawing2D.LineCap.Round
         };
-        graphics.DrawRectangle(outlinePen, ShapeInfo.Box);
+        var rect = ShapeInfo.Box;
+        rect.Offset(p);
+        graphics.DrawRectangle(outlinePen, rect);
         
 
         if (ShapeInfo.FillColor != Color.Transparent)
         {
             using var fillBrush = new SolidBrush(ShapeInfo.FillColor);
-            var rect = ShapeInfo.Box;
             rect.Inflate(-FILL_MARGIN, -FILL_MARGIN);
             graphics.FillRectangle(fillBrush, rect);
         }

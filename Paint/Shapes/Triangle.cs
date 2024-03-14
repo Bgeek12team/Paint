@@ -8,6 +8,7 @@ public class Triangle(ShapeInfo info)
     public override void Draw(Graphics graphics, Point p)
     {
         System.Drawing.Rectangle triangleBox = ShapeInfo.Box;
+        triangleBox.Offset(p);
 
         Point topVertex = new Point((triangleBox.Left + triangleBox.Right) / 2, triangleBox.Top);
 

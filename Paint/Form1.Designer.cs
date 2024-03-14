@@ -64,6 +64,7 @@
             colorDialog1 = new ColorDialog();
             openFileDialog1 = new OpenFileDialog();
             saveFileDialog1 = new SaveFileDialog();
+            groupBox7 = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             groupBox6.SuspendLayout();
@@ -78,7 +79,6 @@
             // 
             pictureBox1.BackColor = Color.WhiteSmoke;
             pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Dock = DockStyle.Fill;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(1218, 706);
@@ -99,9 +99,9 @@
             groupBox1.Controls.Add(groupBox3);
             groupBox1.Controls.Add(groupBox2);
             groupBox1.Font = new Font("Bookman Old Style", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            groupBox1.Location = new Point(916, 0);
+            groupBox1.Location = new Point(963, 0);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(302, 706);
+            groupBox1.Size = new Size(255, 706);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             // 
@@ -147,6 +147,7 @@
             filesave_button.TabIndex = 8;
             filesave_button.Text = "Сохранить";
             filesave_button.UseVisualStyleBackColor = true;
+            filesave_button.Click += filesave_button_Click;
             // 
             // groupBox5
             // 
@@ -435,14 +436,26 @@
             Red_button.UseVisualStyleBackColor = false;
             Red_button.Click += Red_button_Click;
             // 
+            // groupBox7
+            // 
+            groupBox7.BackColor = Color.LightGray;
+            groupBox7.Font = new Font("Bookman Old Style", 16.2F, FontStyle.Bold);
+            groupBox7.Location = new Point(0, 706);
+            groupBox7.Name = "groupBox7";
+            groupBox7.Size = new Size(1218, 119);
+            groupBox7.TabIndex = 3;
+            groupBox7.TabStop = false;
+            groupBox7.Text = "loaded shapes:";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(1218, 706);
+            ClientSize = new Size(1218, 824);
             Controls.Add(groupBox1);
             Controls.Add(pictureBox1);
+            Controls.Add(groupBox7);
             Name = "Form1";
             Text = "PAINt";
             MouseDown += Form1_MouseDown;
@@ -497,5 +510,6 @@
         private ColorDialog colorDialog1;
         private OpenFileDialog openFileDialog1;
         private SaveFileDialog saveFileDialog1;
+        private GroupBox groupBox7;
     }
 }

@@ -13,7 +13,8 @@ public class Circle(ShapeInfo info)
         Point center = ShapeInfo.Box.Location;
         int radius = ShapeInfo.Box.Width / 2;
 
-        var circleBox = new System.Drawing.Rectangle(center.X - radius, center.Y - radius, 2 * radius, 2 * radius);
+        var circleBox = ShapeInfo.Box;
+        circleBox.Offset(p);
         var outlinePen = new Pen(ShapeInfo.BorderColor)
         {
             StartCap = System.Drawing.Drawing2D.LineCap.Round,
