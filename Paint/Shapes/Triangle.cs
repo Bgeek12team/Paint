@@ -12,20 +12,25 @@ public class Triangle(ShapeInfo info)
         Point topVertex = new Point((triangleBox.Left + triangleBox.Right) / 2, triangleBox.Top);
 
         Point[] trianglePoints = { new Point(triangleBox.Left, triangleBox.Bottom),
-                                           new Point(triangleBox.Right, triangleBox.Bottom),
-                                           topVertex };
+                                   new Point(triangleBox.Right, triangleBox.Bottom),
+                                    topVertex };
 
-        using (var outlinePen = new Pen(ShapeInfo.BorderColor))
+        var outlinePen = new Pen(ShapeInfo.BorderColor)
         {
-            graphics.DrawPolygon(outlinePen, trianglePoints);
-        }
+            StartCap = System.Drawing.Drawing2D.LineCap.Round,
+            EndCap = System.Drawing.Drawing2D.LineCap.Round
+        };
+        graphics.DrawPolygon(outlinePen, trianglePoints);
 
         if (ShapeInfo.FillColor != Color.Transparent)
         {
-            using (var fillBrush = new SolidBrush(ShapeInfo.FillColor))
-            {
-                graphics.FillPolygon(fillBrush, trianglePoints);
-            }
+
+            using var fillBrush = new SolidBrush(ShapeInfo.FillColor);
+            trianglePoints[0].Offset(FILL_MARGIN, -FILL_MARGIN);
+            trianglePoints[1].Offset(-FILL_MARGIN, -FILL_MARGIN);
+            trianglePoints[2].Offset(0, FILL_MARGIN);
+            graphics.FillPolygon(fillBrush, trianglePoints);
+            
         }
     }
 

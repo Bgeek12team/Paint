@@ -7,8 +7,12 @@ public class Line(ShapeInfo info)
 {
     public override void Draw(Graphics graphics, Point p)
     {
-        using var linePen = new Pen(ShapeInfo.BorderColor);
-        graphics.DrawLine(linePen, ShapeInfo.Box.Location, new Point(ShapeInfo.Box.Right, ShapeInfo.Box.Bottom));
+        var outlinePen = new Pen(ShapeInfo.BorderColor)
+        {
+            StartCap = System.Drawing.Drawing2D.LineCap.Round,
+            EndCap = System.Drawing.Drawing2D.LineCap.Round
+        };
+        graphics.DrawLine(outlinePen, ShapeInfo.Box.Location, new Point(ShapeInfo.Box.Right, ShapeInfo.Box.Bottom));
     }
 
     public override bool InShape(Point p)

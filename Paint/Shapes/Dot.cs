@@ -1,13 +1,9 @@
-﻿using System.Drawing;
-
+﻿
 namespace MPaintClassLib.Shares;
 
-public class Circle(ShapeInfo info)
-    : Shape(info)
-{
 
-    public override string ToString() =>
-        "type : circle" + base.ToString();
+internal class Dot(ShapeInfo info) : Shape(info)
+{
     public override void Draw(Graphics graphics, Point p)
     {
         Point center = ShapeInfo.Box.Location;
@@ -24,7 +20,6 @@ public class Circle(ShapeInfo info)
         if (ShapeInfo.FillColor != Color.Transparent)
         {
             using var fillBrush = new SolidBrush(ShapeInfo.FillColor);
-            circleBox.Inflate(-FILL_MARGIN, -FILL_MARGIN);
             graphics.FillEllipse(fillBrush, circleBox);
         }
     }

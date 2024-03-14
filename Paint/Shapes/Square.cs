@@ -10,17 +10,20 @@ public class Square(ShapeInfo info)
         int sideLength = Math.Min(ShapeInfo.Box.Width, ShapeInfo.Box.Height);
         System.Drawing.Rectangle squareRect = new System.Drawing.Rectangle(ShapeInfo.Box.Location, new Size(sideLength, sideLength));
 
-        using (var outlinePen = new Pen(ShapeInfo.BorderColor))
+        var outlinePen = new Pen(ShapeInfo.BorderColor)
         {
-            graphics.DrawRectangle(outlinePen, squareRect);
-        }
+            StartCap = System.Drawing.Drawing2D.LineCap.Round,
+            EndCap = System.Drawing.Drawing2D.LineCap.Round
+        };
+        graphics.DrawRectangle(outlinePen, squareRect);
 
         if (ShapeInfo.FillColor != Color.Transparent)
         {
-            using (var fillBrush = new SolidBrush(ShapeInfo.FillColor))
-            {
-                graphics.FillRectangle(fillBrush, squareRect);
-            }
+            
+            using var fillBrush = new SolidBrush(ShapeInfo.FillColor);
+            var rect = ShapeInfo.Box;
+            rect.Inflate(-FILL_MARGIN, -FILL_MARGIN);
+            graphics.FillRectangle(fillBrush, rect);
         }
     }
 

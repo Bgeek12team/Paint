@@ -7,13 +7,19 @@ public class Ellipse(ShapeInfo info)
 {
     public override void Draw(Graphics graphics, Point p)
     {
-        using var outlinePen = new Pen(ShapeInfo.BorderColor);
+        var outlinePen = new Pen(ShapeInfo.BorderColor)
+        {
+            StartCap = System.Drawing.Drawing2D.LineCap.Round,
+            EndCap = System.Drawing.Drawing2D.LineCap.Round
+        };
         graphics.DrawEllipse(outlinePen, ShapeInfo.Box);
 
         if (ShapeInfo.FillColor != Color.Transparent)
         {
             using var fillBrush = new SolidBrush(ShapeInfo.FillColor);
-            graphics.FillEllipse(fillBrush, ShapeInfo.Box);
+            var rect = ShapeInfo.Box;
+            rect.Inflate(-FILL_MARGIN, -FILL_MARGIN);
+            graphics.FillEllipse(fillBrush, rect);
         }
     }
 
