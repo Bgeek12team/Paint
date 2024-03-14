@@ -16,6 +16,11 @@ Shape(info)
 
     public override bool InShape(Point p)
     {
-        throw new NotImplementedException();
+        foreach(var sh in shapes)
+        {
+            if (sh.InShape(p))
+                return true;
+        }
+        return false;
     }
 }

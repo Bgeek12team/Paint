@@ -25,12 +25,12 @@ internal class Controller
         newShape.Draw(graphics, p);
     }
 
-    public void DrawLine(Point p, Color border, Color fill, System.Drawing.Rectangle rect)
+    public void DrawLine(Point p1, Point p2, Color border, Color fill, System.Drawing.Rectangle rect)
     {
         rect.Offset(-rect.Location.X, -rect.Location.Y);
-        Shape newShape = new Line(new(border, fill, rect));
-        canvasShapes.TryAdd(p, newShape);
-        newShape.Draw(graphics, p);
+        Line newShape = new Line(new(border, fill, rect));
+        canvasShapes.TryAdd(p1, newShape);
+        newShape.Draw(graphics, p1, p2);
     }
 
     public void DrawEllipse(Point p, Color border, Color fill, System.Drawing.Rectangle rect)
@@ -84,6 +84,12 @@ internal class Controller
         graphics.Clear(Color.White);
         foreach (var shape in canvasShapes)
         {
+            if (shape.Value is Line)
+            {
+                Line line = shape.Value as Line;
+                line.Draw(graphics, line.StartPoint, line.EndPoint);
+                continue;
+            }
             shape.Value.Draw(graphics, shape.Key);
         }
     }
@@ -123,17 +129,16 @@ internal class Controller
     {
         foreach (var shape in canvasShapes)
         {
-            // кодга будет реализовано: 
-            //if (shape.Value.GetUtils().InShape(shape.Key))
-            //    return shape.Value;
             var rect = shape.Value.ShapeInfo.Box;
-            rect.Offset(shape.Key);
-            if ((rect.Left < p.X) && (rect.Right > p.X)
-                && (rect.Top < p.Y) && (rect.Bottom > p.Y))
+            var newRect = rect;
+            newRect.Offset(shape.Key);
+            shape.Value.ShapeInfo.Box = newRect;
+            if (shape.Value.InShape(p))
             {
                 adjPoint = shape.Key;
                 return shape.Value;
             }
+            shape.Value.ShapeInfo.Box = rect;
         }
         adjPoint = null;
         return null;

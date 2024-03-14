@@ -127,7 +127,7 @@ public partial class Form1 : Form
                     customColor, GetRectangle(startPoint, endPoint));
 
             if (selectedShapes == SelectedShapes.Line)
-                controller.DrawLine(DefineLeftUpperPoint(startPoint, endPoint), customColor,
+                controller.DrawLine(startPoint, endPoint, customColor,
                     customColor, GetRectangle(startPoint, endPoint));
 
             if (selectedShapes == SelectedShapes.Triangle)
