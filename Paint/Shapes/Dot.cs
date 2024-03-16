@@ -6,11 +6,10 @@ internal class Dot(ShapeInfo info) : Shape(info)
 {
     public override void Draw(Graphics graphics, Point p)
     {
-        Point center = ShapeInfo.Box.Location;
         int radius = ShapeInfo.Box.Width / 2;
 
         var circleBox = ShapeInfo.Box;
-        circleBox.Offset(p);
+        circleBox.Offset(p.X - radius, p.Y - radius);
         var outlinePen = new Pen(ShapeInfo.BorderColor)
         {
             StartCap = System.Drawing.Drawing2D.LineCap.Round,

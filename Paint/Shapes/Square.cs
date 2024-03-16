@@ -3,7 +3,7 @@
 namespace MPaintClassLib.Shares;
 
 public class Square(ShapeInfo info)
-    : Shape(info)
+    : Rectangle(info)
 {
     public override void Draw(Graphics graphics, Point p)
     {

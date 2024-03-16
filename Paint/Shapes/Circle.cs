@@ -3,7 +3,7 @@
 namespace MPaintClassLib.Shares;
 
 public class Circle(ShapeInfo info)
-    : Shape(info)
+    : Ellipse(info)
 {
 
     public override string ToString() =>
