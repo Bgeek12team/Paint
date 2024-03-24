@@ -7,14 +7,14 @@ public class Ellipse(ShapeInfo info)
 {
     public override void Draw(Graphics graphics, Point p)
     {
-        var outlinePen = new Pen(ShapeInfo.BorderColor)
+        var outlinePen = new Pen(ShapeInfo.BorderColor,4)
         {
             StartCap = System.Drawing.Drawing2D.LineCap.Round,
             EndCap = System.Drawing.Drawing2D.LineCap.Round
         };
         var rect = ShapeInfo.Box;
         rect.Offset(p);
-        graphics.DrawEllipse(outlinePen, ShapeInfo.Box);
+        graphics.DrawEllipse(outlinePen, rect);
 
         if (ShapeInfo.FillColor != Color.Transparent)
         {

@@ -7,7 +7,7 @@ public class Rectangle(ShapeInfo info)
 {
     public override void Draw(Graphics graphics, Point p)
     {
-        var outlinePen = new Pen(ShapeInfo.BorderColor)
+        var outlinePen = new Pen(ShapeInfo.BorderColor,4)
         {
             StartCap = System.Drawing.Drawing2D.LineCap.Round,
             EndCap = System.Drawing.Drawing2D.LineCap.Round

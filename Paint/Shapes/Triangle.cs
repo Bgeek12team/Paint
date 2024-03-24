@@ -16,7 +16,7 @@ public class Triangle(ShapeInfo info)
                                    new Point(triangleBox.Right, triangleBox.Bottom),
                                     topVertex };
 
-        var outlinePen = new Pen(ShapeInfo.BorderColor)
+        var outlinePen = new Pen(ShapeInfo.BorderColor,4)
         {
             StartCap = System.Drawing.Drawing2D.LineCap.Round,
             EndCap = System.Drawing.Drawing2D.LineCap.Round
@@ -38,7 +38,6 @@ public class Triangle(ShapeInfo info)
     public override bool InShape(Point p)
     {
         System.Drawing.Rectangle triangleBox = ShapeInfo.Box;
-        triangleBox.Offset(p);
 
         Point topVertex = new Point((triangleBox.Left + triangleBox.Right) / 2, triangleBox.Top);
 

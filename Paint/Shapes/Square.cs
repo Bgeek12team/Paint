@@ -10,7 +10,7 @@ public class Square(ShapeInfo info)
         int sideLength = Math.Min(ShapeInfo.Box.Width, ShapeInfo.Box.Height);
         System.Drawing.Rectangle squareRect = new System.Drawing.Rectangle(ShapeInfo.Box.Location, new Size(sideLength, sideLength));
         squareRect.Offset(p);
-        var outlinePen = new Pen(ShapeInfo.BorderColor)
+        var outlinePen = new Pen(ShapeInfo.BorderColor,4)
         {
             StartCap = System.Drawing.Drawing2D.LineCap.Round,
             EndCap = System.Drawing.Drawing2D.LineCap.Round

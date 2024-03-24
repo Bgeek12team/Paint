@@ -123,29 +123,29 @@ public partial class Form1 : Form
         if (isDrawing)
         {
             if (selectedShapes == SelectedShapes.Ellipse)
-                controller.DrawEllipse(DefineLeftUpperPoint(startPoint, endPoint), Color.Transparent, 
-                    customColor, GetRectangle(startPoint, endPoint));
+                controller.DrawEllipse(DefineLeftUpperPoint(startPoint, endPoint), customColor, 
+                    Color.Transparent, GetRectangle(startPoint, endPoint));
 
             if (selectedShapes == SelectedShapes.Line)
                 controller.DrawLine(startPoint, endPoint, customColor,
                     customColor, GetRectangle(startPoint, endPoint));
 
             if (selectedShapes == SelectedShapes.Triangle)
-                controller.DrawTriangle(DefineLeftUpperPoint(startPoint, endPoint), Color.Transparent,
-                    customColor, GetRectangle(startPoint, endPoint));
+                controller.DrawTriangle(DefineLeftUpperPoint(startPoint, endPoint), customColor,
+                    Color.Transparent, GetRectangle(startPoint, endPoint));
 
             if (selectedShapes == SelectedShapes.Square)
-                controller.DrawSquare(DefineLeftUpperPoint(startPoint, endPoint), Color.Transparent, 
-                    customColor, GetRectangle(startPoint, endPoint));
+                controller.DrawSquare(DefineLeftUpperPoint(startPoint, endPoint), customColor,
+                    Color.Transparent, GetRectangle(startPoint, endPoint));
 
 
             if (selectedShapes == SelectedShapes.Rectangle)
-                controller.DrawRectangle(DefineLeftUpperPoint(startPoint, endPoint), Color.Transparent, 
-                    customColor, GetRectangle(startPoint, endPoint));
+                controller.DrawRectangle(DefineLeftUpperPoint(startPoint, endPoint), customColor,
+                    Color.Transparent, GetRectangle(startPoint, endPoint));
 
             if (selectedShapes == SelectedShapes.Circle)
-                controller.DrawCircle(DefineLeftUpperPoint(startPoint, endPoint), Color.Transparent, 
-                    customColor, GetRectangle(startPoint, endPoint));
+                controller.DrawCircle(DefineLeftUpperPoint(startPoint, endPoint), customColor,
+                    Color.Transparent, GetRectangle(startPoint, endPoint));
 
             if (selectedShapes == SelectedShapes.Loaded)
                 controller.DrawCustomShape(loadedShapeIndex, startPoint);

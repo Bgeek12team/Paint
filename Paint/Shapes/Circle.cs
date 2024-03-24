@@ -15,7 +15,7 @@ public class Circle(ShapeInfo info)
 
         var circleBox = ShapeInfo.Box;
         circleBox.Offset(p);
-        var outlinePen = new Pen(ShapeInfo.BorderColor)
+        var outlinePen = new Pen(ShapeInfo.BorderColor,4)
         {
             StartCap = System.Drawing.Drawing2D.LineCap.Round,
             EndCap = System.Drawing.Drawing2D.LineCap.Round
